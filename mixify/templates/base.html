@@ -16,7 +16,8 @@
         <nav>
             <div class="nav-wrapper">
             <a href="{{ url_for('home') }}" class="brand-logo">Mixify</a>
-            <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <a href="{{ url_for('home') }}" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+            <ul id="nav-mobile" class="right hide-on-med-and-down"> 
                 <li><a href="{{ url_for('home') }}">Home</a></li>
                 <li><a href="{{ url_for('recipes') }}">Recipes</a></li>
                 <li><a href="{{ url_for('favourites') }}">Favourites</a></li>
