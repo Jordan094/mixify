@@ -8,10 +8,16 @@ main {
   flex: 1 0 auto;
 }
 
+footer {
+  margin-top: auto;
+}
+    
+
 #home-card {
   margin-left: 10px;
 }
 
 #index-banner {
-  background-image: url('https://www.freewebheaders.com/wp-content/gallery/drinks/strawberry-juice-cocktail-glass-and-dessert-website-header.jpg');
+  background-image: url('//files/images/glasses.jpg');
+  background-size: cover;
 }
