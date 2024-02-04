@@ -36,3 +36,7 @@ nav a, ul a {
   padding-left: 10%;
   padding-right: 10%;
 }
+
+.section-text{
+  font-weight: 600;
+}
