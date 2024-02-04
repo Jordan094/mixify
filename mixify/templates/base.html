@@ -14,12 +14,13 @@
     <!--Navbar Using Materialize CSS-->
         <nav>
             <div class="nav-wrapper">
-            <a href="#" class="brand-logo">Mixify</a>
+            <a href="{{ url_for('home') }}" class="brand-logo">Mixify</a>
             <ul id="nav-mobile" class="right hide-on-med-and-down">
-                <li><a href="sass.html">Recipes</a></li>
-                <li><a href="badges.html">Favourites</a></li>
-                <li><a href="collapsible.html">Sign Up</a></li>
-                <li><a href="collapsible.html">Log In</a></li>
+                <li><a href="{{ url_for('home') }}">Home</a></li>
+                <li><a href="{{ url_for('home') }}">Recipes</a></li>
+                <li><a href="{{ url_for('favourites') }}">Favourites</a></li>
+                <li><a href="{{ url_for('home') }}">Sign Up</a></li>
+                <li><a href="{{ url_for('home') }}">Log In</a></li>
             </ul>
             </div>
         </nav>
