@@ -18,6 +18,21 @@ footer {
 }
 
 #index-banner {
-  background-image: url('https://i.postimg.cc/63cS5Q9c/images.jpg');
+  background-image: url('https://i.postimg.cc/s2k6jhd5/images.jpg');
   background-size: cover;
+}
+
+.brand-logo{
+  margin-left: 1%;
+  font-weight: 600;
+}
+
+nav a, ul a {
+  color: black !important;
+  font-weight: 600;
+}
+
+.section{
+  padding-left: 10%;
+  padding-right: 10%;
 }
