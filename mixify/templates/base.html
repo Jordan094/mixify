@@ -25,8 +25,17 @@
             </ul>
             </div>
         </nav>
+        <!-- mobile sidenav -->
+        <ul class="sidenav" id="mobile-demo">
+          <li><a href="{{ url_for('home') }}">Home</a></li>
+          <li><a href="{{ url_for('recipes') }}">Recipes</a></li>
+          <li><a href="{{ url_for('favourites') }}">Favourites</a></li>
+          <li><a href="{{ url_for('signup') }}">Sign Up</a></li>
+          <li><a href="{{ url_for('login') }}">Log In</a></li>
+        </ul>
     </header>
-    <!--Navbar Using Materialize CSS-->
+
+    <!--Main content-->
     <main class="container">
 
     </main>
@@ -39,16 +48,6 @@
 
     <!--Footer Using Materialize CSS-->
     <footer class="page-footer">
-        <div class="container">
-          <div class="row">
-            <div class="col l6 s12">
-            </div>
-            <div class="col l4 offset-l2 s12">
-              <ul>
-              </ul>
-            </div>
-          </div>
-        </div>
         <div class="footer-copyright">
           <div class="container">
           Mixify.com
@@ -60,6 +59,7 @@
 
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
 
 </body>
 </html>
