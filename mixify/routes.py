@@ -24,7 +24,7 @@ def signup():
     return render_template("signup.html")
 
 
-# Function for new users to isgn up to site
+# Function for new users to sign up to site
 @app.route("/signup", methods=["GET", "POST"])
 def register():
     """Generates a page with a sign up form. Which allows a user to signup"""
@@ -50,5 +50,38 @@ def register():
         session["user"] = request.form.get("user_name").lower()
         # Informs the users that signup is successful
         flash("Signup complete - Thank you for joining Mixify!")
+        # Redirects user to login page
         return redirect(url_for("login"))
+
+    return render_template("login.html")
+
+# Function for users to log in
+@app.route("/login", methods=["GET", "POST"])
+def sitelogin():
+    """Shows login page to user with a form to login"""
+    if request.method == "POST":
+        # Ensures input username is present in Database
+        existing_user = User.query.filter(
+            User.user_name == request.form.get("user_name").lower()).all()
+
+        if existing_user:
+            # Check to ensure password matches user input
+            if check_password_hash(
+                    existing_user[0].password, request.form.get("password")):
+                session["user"] = request.form.get("user_name").lower()
+                # Flash message so user knows they are logged in
+                flash("You are logged in as, {}".format(
+                    request.form.get("user_name")))
+                return redirect(url_for(
+                    "recipes"))
+            else:
+                # Error message to user if wrong password has been input
+                flash("Incorrect Username and/or Password")
+                return redirect(url_for("login"))
+
+        else:
+            # Error message to user if invalid username has been input
+            flash("Incorrect Username and/or Password")
+            return redirect(url_for("recipes"))
+
 
