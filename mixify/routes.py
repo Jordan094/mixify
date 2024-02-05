@@ -84,4 +84,11 @@ def sitelogin():
             flash("Incorrect Username and/or Password")
             return redirect(url_for("recipes"))
 
+# Function to logout user from session
+@app.route("/logout")
+def logout():
+    """logout user from session"""
+    flash("You are no longer logged in")
+    session.pop("user")
+    return redirect(url_for("login"))
 
