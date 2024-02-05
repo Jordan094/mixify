@@ -24,10 +24,10 @@ def signup():
     return render_template("signup.html")
 
 
-
+# Function for new users to isgn up to site
 @app.route("/signup", methods=["GET", "POST"])
 def register():
-    """Renders register page and allows user to register"""
+    """Generates a page with a sign up form. Which allows a user to signup"""
     if request.method == "POST":
         # checks if username already exists
         existing_user = User.query.filter(

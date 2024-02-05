@@ -35,6 +35,16 @@
           <li><a href="{{ url_for('login') }}">Log In</a></li>
         </ul>
     </header>
+    <!--Flash Message Section for all pages-->
+    <div>
+        <div class="container">
+            {% with messages = get_flashed_messages() %} {% if messages %} {% for message in messages %}
+            <div class="row flashes">
+                <p>{{ message }}</p>
+            </div>
+            {% endfor %} {% endif %} {% endwith %}
+        </div>
+    </div>
 
     <!--Main content-->
         {% block content %}
