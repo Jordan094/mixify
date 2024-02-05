@@ -18,7 +18,6 @@
             <a href="{{ url_for('home') }}" class="brand-logo">Mixify</a>
             <a href="{{ url_for('home') }}" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
             <ul id="nav-mobile" class="right hide-on-med-and-down"> 
-                <li><a href="{{ url_for('home') }}">Home</a></li>
                 <li><a href="{{ url_for('recipes') }}">Recipes</a></li>
                 <li><a href="{{ url_for('favourites') }}">Favourites</a></li>
                 <li><a href="{{ url_for('signup') }}">Sign Up</a></li>
@@ -28,7 +27,6 @@
         </nav>
         <!-- mobile sidenav -->
         <ul class="sidenav" id="mobile-demo">
-          <li><a href="{{ url_for('home') }}">Home</a></li>
           <li><a href="{{ url_for('recipes') }}">Recipes</a></li>
           <li><a href="{{ url_for('favourites') }}">Favourites</a></li>
           <li><a href="{{ url_for('signup') }}">Sign Up</a></li>
