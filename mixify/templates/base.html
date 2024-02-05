@@ -12,25 +12,37 @@
 
 <body>
     <header>
-    <!--Navbar Using Materialize CSS-->
+        <!--Navbar Using Materialize CSS-->
         <nav>
-            <div class="nav-wrapper  orange accent-3">
-            <a href="{{ url_for('home') }}" class="brand-logo">Mixify</a>
-            <a href="{{ url_for('home') }}" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-            <ul id="nav-mobile" class="right hide-on-med-and-down"> 
-                <li><a href="{{ url_for('recipes') }}">Recipes</a></li>
-                <li><a href="{{ url_for('favourites') }}">Favourites</a></li>
-                <li><a href="{{ url_for('signup') }}">Sign Up</a></li>
-                <li><a href="{{ url_for('login') }}">Log In</a></li>
-            </ul>
+            <div class="nav-wrapper orange accent-3">
+                <a href="{{ url_for('home') }}" class="brand-logo">Mixify</a>
+                <a href="{{ url_for('home') }}" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+                <ul id="nav-mobile" class="right hide-on-med-and-down">
+                    {% if session['user'] %}
+                        <!-- If user is logged in -->
+                        <li><a href="{{ url_for('recipes') }}">Recipes</a></li>
+                        <li><a href="{{ url_for('favourites') }}">Favourites</a></li>
+                        <li><a href="{{ url_for('logout') }}">{{ session['user']|capitalize }} (Logout)</a></li>
+                    {% else %}
+                        <!-- If user is not logged in -->
+                        <li><a href="{{ url_for('signup') }}">Sign Up</a></li>
+                        <li><a href="{{ url_for('login') }}">Log In</a></li>
+                    {% endif %}
+                </ul>
             </div>
         </nav>
         <!-- mobile sidenav -->
         <ul class="sidenav" id="mobile-demo">
-          <li><a href="{{ url_for('recipes') }}">Recipes</a></li>
-          <li><a href="{{ url_for('favourites') }}">Favourites</a></li>
-          <li><a href="{{ url_for('signup') }}">Sign Up</a></li>
-          <li><a href="{{ url_for('login') }}">Log In</a></li>
+            {% if session['user'] %}
+                <!-- If user is logged in -->
+                <li><a href="{{ url_for('recipes') }}">Recipes</a></li>
+                <li><a href="{{ url_for('favourites') }}">Favourites</a></li>
+                <li><a href="{{ url_for('logout') }}">{{ session['user']|capitalize }} (Logout)</a></li>
+            {% else %}
+                <!-- If user is not logged in -->
+                <li><a href="{{ url_for('signup') }}">Sign Up</a></li>
+                <li><a href="{{ url_for('login') }}">Log In</a></li>
+            {% endif %}
         </ul>
     </header>
     <!--Flash Message Section for all pages-->
