@@ -29,13 +29,13 @@ def signup():
 def register():
     """Generates a page with a sign up form. Which allows a user to signup"""
     if request.method == "POST":
-        # checks if username already exists
+        # Checks database to query if Chosen Username is already being used
         existing_user = User.query.filter(
             User.user_name == request.form.get("user_name").lower()).all()
-
+        # If username is in use. Alerts user and requests they chose another username
         if existing_user:
             flash(
-                "Username already exists. Please try a different username")
+                "This username is already in use. Please try a different username")
             return redirect(url_for("register"))
 
         user = User(
@@ -44,43 +44,11 @@ def register():
             user_last_name=request.form.get("last_name").lower(),
             password=generate_password_hash(request.form.get("password"))
         )
-
-        # Add user to databsase
+        # Creates a user record in database
         db.session.add(user)
         db.session.commit()
-
-        # put the new user into 'session' cookie
         session["user"] = request.form.get("user_name").lower()
-        flash("Registration Successful!")
-        return redirect(url_for("favourites"))
+        # Informs the users that signup is successful
+        flash("Signup complete - Thank you for joining Mixify!")
+        return redirect(url_for("login"))
 
-    return render_template("login.html")
-
-@app.route("/login", methods=["GET", "POST"])
-def sitelogin():
-    """Renders log in page and allows user to login"""
-    if request.method == "POST":
-        # check if username exists in db
-        existing_user = User.query.filter(
-            User.user_name == request.form.get("user_name").lower()).all()
-
-        if existing_user:
-            # ensure hashed password matches user input
-            if check_password_hash(
-                    existing_user[0].password, request.form.get("password")):
-                session["user"] = request.form.get("user_name").lower()
-                flash("Welcome, {}".format(
-                    request.form.get("user_name")))
-                return redirect(url_for(
-                    "recipes"))
-            else:
-                # invalid password match
-                flash("Incorrect Username and/or Password")
-                return redirect(url_for("login"))
-
-        else:
-            # username doesn't exist
-            flash("Incorrect Username and/or Password")
-            return redirect(url_for("login"))
-
-    return render_template("login.html")
