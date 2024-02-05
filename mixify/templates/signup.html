@@ -2,7 +2,7 @@
 {% block content %}
 <div class="row">
     <h2 class="page-title-responsive center">Sign up</h2>
-    <form class="col s12 m8 offset-m2" method="POST" action="{{ url_for('signup') }}">
+    <form class="col s12 m8 offset-m2" method="POST" action="{{ url_for('signup') }}" onsubmit="return validateAge()">
         <div class="card-panel">
             <!--Username Input Field-->
             <div class="row">
