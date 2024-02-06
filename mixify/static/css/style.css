@@ -78,3 +78,11 @@ nav a, ul a {
 #download-button{
   color: #fffde7;
 }
+
+.card.panel {
+  height: 300px; /* Adjust this value as needed */
+}
+
+.card .card-content{
+  padding: 8px
+}
