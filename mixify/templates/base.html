@@ -51,10 +51,10 @@
         </ul>
     </header>
     <!--Flash Message Section for all pages-->
-    <div>
+    <div class="orange accent-3">
         <div class="container">
             {% with messages = get_flashed_messages() %} {% if messages %} {% for message in messages %}
-            <div class="row-flashes center-align">
+            <div class="row-flashes center-align ">
                 <p>{{ message }}</p>
             </div>
             {% endfor %} {% endif %} {% endwith %}
