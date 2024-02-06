@@ -26,6 +26,14 @@ footer {
   background-size: cover;
 }
 
+#alt-banner {
+  background-image: url('https://i.postimg.cc/SKTt9npN/backgroundddd.jpg');
+  width: 100%; /* or any other desired width */
+  height: 100vh; /* or any other desired height */
+  background-size: cover; /* This will ensure the background fully covers the container */
+}
+
+
 .brand-logo{
   margin-left: 1%;
   font-weight: 600;
