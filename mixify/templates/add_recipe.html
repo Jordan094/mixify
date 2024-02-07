@@ -1,6 +1,65 @@
 {% extends "base.html" %}
 {% block content %}
 <div id="alt-banner">
-    <h1 class="header center text-lighten-2">Favourites</h1>
+<div class="row">
+    <h2 class="page-title-responsive center">Add New Recipe</h2>
+    <form class="col s12 m8 offset-m2" method="POST" action="{{ url_for('add_recipe') }}" enctype="multipart/form-data">
+        <div class="card-panel">
+            <!-- Recipe Title Input Field -->
+            <div class="row">
+                <div class="input-field col s12">
+                    <input id="recipe_title" name="recipe_title" type="text" class="validate" required>
+                    <label for="recipe_title">Recipe Title</label>
+                </div>
+            </div>
+            <!-- Recipe Description Input Field -->
+            <div class="row">
+                <div class="input-field col s12">
+                    <textarea id="recipe_description" name="recipe_description" class="materialize-textarea" required></textarea>
+                    <label for="recipe_description">Recipe Description</label>
+                </div>
+            </div>
+            <!-- Recipe Ingredients Input Field -->
+            <div class="row">
+                <div class="input-field col s12">
+                    <textarea id="recipe_ingredients" name="recipe_ingredients" class="materialize-textarea" required></textarea>
+                    <label for="recipe_ingredients">Recipe Ingredients</label>
+                </div>
+            </div>
+            <!-- Recipe Instructions Input Field -->
+            <div class="row">
+                <div class="input-field col s12">
+                    <textarea id="recipe_instructions" name="recipe_instructions" class="materialize-textarea" required></textarea>
+                    <label for="recipe_instructions">Recipe Instructions</label>
+                </div>
+            </div>
+            <!-- Recipe Image Input Field -->
+            <div class="file-field input-field">
+                <div class="btn">
+                    <span>Upload Image</span>
+                    <input type="file" name="recipe_image">
+                </div>
+                <div class="file-path-wrapper">
+                    <input class="file-path validate" type="text" placeholder="Upload an image file">
+                </div>
+            </div>
+            <!-- Add Recipe/ Submit Button -->
+            <div class="row">
+                <button type="submit" class="btn waves-effect black col s12">
+                    Add Recipe
+                </button>
+            </div>
+        </div>
+    </form>
 </div>
+
+<div class="row">
+    <div class="col s12">
+        <p class="center-align">
+            <a href="{{ url_for('home') }}">Back to Home</a>
+        </p>
+    </div>  
+</div>
+</div>
+
 {% endblock %}
