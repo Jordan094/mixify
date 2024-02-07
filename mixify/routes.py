@@ -1,6 +1,6 @@
 from flask import flash, render_template, request, redirect, session, url_for
 from mixify import app, db
-from mixify.models import User
+from mixify.models import User, Recipe
 from werkzeug.security import generate_password_hash, check_password_hash
 
 @app.route("/")
@@ -18,6 +18,29 @@ def login():
 @app.route("/recipes")
 def recipes():
     return render_template("recipes.html")
+
+@app.route("/add_recipe", methods=["GET", "POST"])
+def add_recipe():
+    """Generates a page with a form to add a new recipe"""
+    if request.method == "POST":
+        recipe_title = request.form.get("recipe_title")
+        recipe_description = request.form.get("recipe_description")
+        recipe_ingredients = request.form.get("recipe_ingredients")
+        recipe_instructions = request.form.get("recipe_instructions")
+        
+        
+        # Process file upload
+        recipe_image = request.files['recipe_image']
+        
+        # Create a Recipe instance and add it to the database
+        recipe = Recipe(title=recipe_title, description=recipe_description, ingredients=recipe_ingredients, instructions=recipe_instructions, image_path=recipe_image.filename)
+        db.session.add(recipe)
+        db.session.commit()
+        
+        # Redirect the user after adding the recipe
+        return redirect(url_for("home"))
+
+    return render_template("add_recipe.html")
 
 @app.route("/signup")
 def signup():
@@ -43,6 +66,8 @@ def register():
             user_first_name=request.form.get("first_name").lower(),
             user_last_name=request.form.get("last_name").lower(),
             password=generate_password_hash(request.form.get("password"))
+            
+            
         )
         # Creates a user record in database
         db.session.add(user)

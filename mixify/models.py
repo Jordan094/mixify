@@ -10,7 +10,7 @@ class User(db.Model):
 
 class Recipe(db.Model):
     # Schema for the Recipe model
-    recepie-id = db.Column(db.Integer, primary_key=True)
+    recepieid = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String(100), nullable=False)
     description = db.Column(db.Text, nullable=False)
     ingredients = db.Column(db.Text, nullable=False)
