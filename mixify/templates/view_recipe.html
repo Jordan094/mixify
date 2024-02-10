@@ -24,9 +24,9 @@
                 <!-- Debug statements -->
                 
                 
-                <!-- Delete button always present, but only functional if user matches submitter -->
+                <!-- Delete button always present - need to adapt code so it only allows submitter to delete-->
                 <form method="post" action="{{ url_for('delete_recipe', recipe_id=recipe.recepieid) }}">
-                    <button type="submit" {% if not current_user or current_user.username != recipe.submitter_username %} disabled {% endif %}>
+                    <button type="submit">
                         Delete Recipe
                     </button>
                 </form>
