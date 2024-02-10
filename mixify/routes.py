@@ -97,7 +97,7 @@ def delete_recipe(recipe_id):
 
     # Check if the current user is the submitter of the recipe
     if current_user != recipe.submitter_username:
-        flash("You are not authorized to delete this recipe.")
+        flash("You can only delete recipes that you have submitted!")
         return redirect(url_for("recipes"))
 
     # Delete the recipe from the database
