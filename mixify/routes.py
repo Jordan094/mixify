@@ -77,6 +77,38 @@ def view_recipe(recipe_id):
         abort(404)
     return render_template("view_recipe.html", recipe=recipe)
 
+@app.route("/delete_recipe/<int:recipe_id>", methods=["POST"])
+def delete_recipe(recipe_id):
+    # Check if the user is logged in
+    if "user" not in session:
+        flash("You need to log in to delete a recipe.")
+        return redirect(url_for("login"))
+
+    # Get the current user's username
+    current_user = session["user"]
+
+    # Retrieve the recipe from the database
+    recipe = Recipe.query.get(recipe_id)
+
+    # Check if the recipe exists
+    if not recipe:
+        flash("Recipe not found.")
+        return redirect(url_for("home"))
+
+    # Check if the current user is the submitter of the recipe
+    if current_user != recipe.submitter_username:
+        flash("You are not authorized to delete this recipe.")
+        return redirect(url_for("home"))
+
+    # Delete the recipe from the database
+    db.session.delete(recipe)
+    db.session.commit()
+
+    flash("Recipe deleted successfully.")
+    return redirect(url_for("home"))
+
+
+
 
 
 

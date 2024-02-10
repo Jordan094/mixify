@@ -1,5 +1,4 @@
 {% extends "base.html" %}
-
 {% block content %}
 <div class="container">
     <h2>{{ recipe.title }}</h2>
@@ -9,6 +8,7 @@
                 <div class="card-image">
                     <img src="{{ url_for('static', filename=recipe.image_path) }}" alt="{{ recipe.title }}">
                     <span class="card-title">{{ recipe.title }}</span>
+                    <p>Submitteed by: {{ recipe.submitter_username }}</p>
                 </div>
                 <div class="card-content">
                     <p>{{ recipe.description }}</p>
@@ -21,6 +21,15 @@
                     <h5>Instructions:</h5>
                     <p>{{ recipe.instructions }}</p>
                 </div>
+                <!-- Debug statements -->
+                
+                
+                <!-- Delete button always present, but only functional if user matches submitter -->
+                <form method="post" action="{{ url_for('delete_recipe', recipe_id=recipe.recepieid) }}">
+                    <button type="submit" {% if not current_user or current_user.username != recipe.submitter_username %} disabled {% endif %}>
+                        Delete Recipe
+                    </button>
+                </form>
             </div>
         </div>
     </div>
