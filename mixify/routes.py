@@ -76,7 +76,7 @@ def register():
         # Informs the users that signup is successful
         flash("Signup complete - Thank you for joining Mixify!")
         # Redirects user to login page
-        return redirect(url_for("login"))
+        return redirect(url_for("home"))
 
     return render_template("login.html")
 
@@ -116,4 +116,3 @@ def logout():
     flash("You are no longer logged in")
     session.pop("user")
     return redirect(url_for("login"))
-
