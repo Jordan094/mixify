@@ -1,6 +1,26 @@
 {% extends "base.html" %}
 {% block content %}
 <div id="alt-banner">
-    <h1 class="header center text-lighten-2">Recipes</h1>
+    <div class="container">
+        <h2 class="center">All Recipes</h2>
+        <div class="row">
+            {% for recipe in recipes %}
+            <div class="col s12 m6 l4">
+                <div class="card">
+                    <div class="card-image">
+                        <img src="{{ url_for('static', filename='recipe_images/' + recipe.image_path) }}">
+                        <span class="card-title">{{ recipe.title }}</span>
+                    </div>
+                    <div class="card-content">
+                        <p>{{ recipe.description }}</p>
+                    </div>
+                    <div class="card-action">
+                        <a href="{{ url_for('recipes', recipe_id=recipe.recepieid) }}">View Recipe</a>
+                    </div>                    
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
 </div>
 {% endblock %}

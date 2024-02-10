@@ -17,7 +17,8 @@ def login():
 
 @app.route("/recipes")
 def recipes():
-    return render_template("recipes.html")
+    recipes = Recipe.query.all()
+    return render_template("recipes.html", recipes=recipes)
 
 @app.route("/add_recipe", methods=["GET", "POST"])
 def add_recipe():
