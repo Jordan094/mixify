@@ -1,4 +1,4 @@
-from flask import flash, render_template, request, redirect, session, url_for
+from flask import flash, render_template, request, redirect, session, url_for, abort
 from mixify import app, db
 from mixify.models import User, Recipe
 from werkzeug.security import generate_password_hash, check_password_hash
@@ -11,9 +11,18 @@ def home():
 def favourites():
     return render_template("favourites.html")
 
-@app.route("/login")
-def login():
-    return render_template("login.html")
+
+
+
+
+
+
+
+
+
+
+
+
 
 @app.route("/recipes")
 def recipes():
@@ -61,6 +70,39 @@ def my_recipes():
     return render_template("my_recipes.html", user_recipes=user_recipes)
 
 
+@app.route("/view_recipe/<int:recipe_id>")
+def view_recipe(recipe_id):
+    recipe = Recipe.query.get(recipe_id)
+    if not recipe:
+        abort(404)
+    return render_template("view_recipe.html", recipe=recipe)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# Function to load signup page
 @app.route("/signup")
 def signup():
     return render_template("signup.html")
@@ -99,6 +141,13 @@ def register():
 
     return render_template("login.html")
 
+
+# Function to load login page
+@app.route("/login")
+def login():
+    return render_template("login.html")
+
+
 # Function for users to log in
 @app.route("/login", methods=["GET", "POST"])
 def sitelogin():
@@ -135,3 +184,4 @@ def logout():
     flash("You are no longer logged in")
     session.pop("user")
     return redirect(url_for("login"))
+
