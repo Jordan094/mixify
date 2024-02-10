@@ -16,3 +16,4 @@ class Recipe(db.Model):
     ingredients = db.Column(db.Text, nullable=False)
     instructions = db.Column(db.Text, nullable=False)
     image_path = db.Column(db.String(100), nullable=True)
+    submitter_username = db.Column(db.String(50), nullable=False)
