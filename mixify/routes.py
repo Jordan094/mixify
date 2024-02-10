@@ -50,6 +50,17 @@ def add_recipe():
 
     return render_template("add_recipe.html")
 
+@app.route("/my_recipes")
+def my_recipes():
+    # Get the username of the currently logged-in user from the session
+    username = session.get("user")
+    
+    # Retrieve recipes belonging to the logged-in user
+    user_recipes = Recipe.query.filter_by(submitter_username=username).all()
+    
+    return render_template("my_recipes.html", user_recipes=user_recipes)
+
+
 @app.route("/signup")
 def signup():
     return render_template("signup.html")

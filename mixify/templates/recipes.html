@@ -3,12 +3,14 @@
 <div id="alt-banner">
     <div class="container">
         <h2 class="center">All Recipes</h2>
+        <br>
+        <br>
         <div class="row">
             {% for recipe in recipes %}
             <div class="col s12 m6 l4">
                 <div class="card">
                     <div class="card-image">
-                        <img src="{{ url_for('static', filename='recipe_images/' + recipe.image_path) }}">
+                        <img src="data:image/png;base64,{{ recipe.image_data }}" alt="{{ recipe.title }}">
                         <span class="card-title">{{ recipe.title }}</span>
                     </div>
                     <div class="card-content">

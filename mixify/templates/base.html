@@ -23,7 +23,7 @@
                         <!-- If user is logged in -->
                         <li><a href="{{ url_for('recipes') }}">Recipes</a></li>
                         <li><a href="{{ url_for('add_recipe') }}">Add Recipe</a></li>
-                        <li><a href="#">My Recipes</a></li>
+                        <li><a href="{{ url_for('my_recipes') }}">My Recipes</a></li>
                         <li><a href="{{ url_for('favourites') }}">Favourites</a></li>
                         <li><a href="{{ url_for('logout') }}">{{ session['user']|capitalize }} (Logout)</a></li>
                     {% else %}
@@ -39,8 +39,8 @@
             {% if session['user'] %}
                 <!-- If user is logged in -->
                 <li><a href="{{ url_for('recipes') }}">Recipes</a></li>
-                <li><a href="#">Add Recipe</a></li>
-                <li><a href="#">My Recipes</a></li>
+                <li><a href="{{ url_for('add_recipe') }}">Add Recipe</a></li>
+                <li><a href="{{ url_for('my_recipes') }}">My Recipes</a></li>
                 <li><a href="{{ url_for('favourites') }}">Favourites</a></li>
                 <li><a href="{{ url_for('logout') }}">{{ session['user']|capitalize }} (Logout)</a></li>
             {% else %}
