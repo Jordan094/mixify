@@ -9,19 +9,20 @@
                 {% set recipe_id = recipe.recepieid %}
                 <div class="col s4 m4">
                     <div class="card">
-                        <div class="card-image">
-                            <img src="{{ url_for('static', filename=recipe.image_path) }}" alt="{{ recipe.title }}">
-                            <span class="card-title">{{ recipe.title }}</span>
-                        </div>
                         <div class="card-content">
-                            <p>{{ recipe.description }}</p>
+                            <span class="card-title center-align">{{ recipe.title }}</span>
+                            <hr>
+                            <p class="center-align">{{ recipe.description }}</p>
+                            <br>
                         </div>
-                        <div class="card-action">
-                            <a href="{{ url_for('view_recipe', recipe_id=recipe.recepieid) }}">View Recipe</a>
+                        <div class="card-action center-align">
+                            <a href="{{ url_for('view_recipe', recipe_id=recipe.recepieid) }}" class="btn orange accent-3">View Recipe</a>
+                            <br>
+                            <br>
                             <form method="post" action="{{ url_for('remove_from_favorites', recipe_id=recipe.recepieid) }}">
-                                <button type="submit" class="btn btn-danger">Remove from Favorites</button>
+                                <button type="submit" class="btn orange accent-3">Remove from Favorites</button>
                             </form>
-                        </div>
+                        </div>                        
                     </div>
                 </div>
             {% endfor %}
