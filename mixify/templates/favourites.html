@@ -1,29 +1,31 @@
 {% extends "base.html" %}
 {% block content %}
 <div id="alt-banner">
-    <div class="row">
-        <!-- Page Header -->
-        <h2 class="page-title-responsive center">Favorite Recipes</h2>
-        {% for recipe in favorites %}
-    {% set recipe_id = recipe.recepieid %}
-    <div class="col s12 m6">
-        <div class="card">
-            <div class="card-image">
-                <img src="{{ url_for('static', filename=recipe.image_path) }}" alt="{{ recipe.title }}">
-                <span class="card-title">{{ recipe.title }}</span>
-            </div>
-            <div class="card-content">
-                <p>{{ recipe.description }}</p>
-            </div>
-            <div class="card-action">
-                <a href="{{ url_for('view_recipe', recipe_id=recipe.recepieid) }}">View Recipe</a>
-                <form method="post" action="{{ url_for('remove_from_favorites', recipe_id=recipe.recepieid) }}">
-                    <button type="submit" class="btn btn-danger">Remove from Favorites</button>
-                </form>
-            </div>
+    <div class="container">
+        <div class="row">
+            <!-- Page Header -->
+            <h2 class="page-title-responsive center">Favorite Recipes</h2>
+            {% for recipe in favorites %}
+                {% set recipe_id = recipe.recepieid %}
+                <div class="col s4 m4">
+                    <div class="card">
+                        <div class="card-image">
+                            <img src="{{ url_for('static', filename=recipe.image_path) }}" alt="{{ recipe.title }}">
+                            <span class="card-title">{{ recipe.title }}</span>
+                        </div>
+                        <div class="card-content">
+                            <p>{{ recipe.description }}</p>
+                        </div>
+                        <div class="card-action">
+                            <a href="{{ url_for('view_recipe', recipe_id=recipe.recepieid) }}">View Recipe</a>
+                            <form method="post" action="{{ url_for('remove_from_favorites', recipe_id=recipe.recepieid) }}">
+                                <button type="submit" class="btn btn-danger">Remove from Favorites</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
         </div>
-    </div>
-{% endfor %}
     </div>
     <!-- Home Button -->
     <div class="row">

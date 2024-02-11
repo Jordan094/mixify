@@ -17,23 +17,28 @@
                         {% if recipe.image_path %}
                         <div class="card-image">
                             <img src="{{ url_for('static', filename='recipe_images/' + recipe.image_path) }}">
+                            <br>
                         </div>
                         {% endif %}
                         <p>{{ recipe.description }}</p>
-                        <!-- View button -->
-                        <a href="{{ url_for('view_recipe', recipe_id=recipe.recepieid) }}" class="btn orange accent-3 black-text">
-                            <i class="material-icons left">visibility</i> View
-                        </a>
-                        <!-- Edit button -->
-                        <a href="{{ url_for('edit_recipe', recipe_id=recipe.recepieid) }}" class="btn orange accent-3 black-text">
-                            <i class="material-icons left">edit</i> Edit
-                        </a>
-                        <!-- Delete button -->
-                        <form method="post" action="{{ url_for('delete_recipe', recipe_id=recipe.recepieid) }}" style="display: inline;">
-                            <button type="submit" class="btn orange accent-3 black-text">
-                                <i class="material-icons">delete</i> Delete
-                            </button>
-                        </form>
+                        <div class="button-container center-align">
+                            <br>
+                            <br>
+                            <!-- View button -->
+                            <a href="{{ url_for('view_recipe', recipe_id=recipe.recepieid) }}" class="btn orange accent-3 black-text">
+                                <i class="material-icons lcenter">visibility</i>
+                            </a>
+                            <!-- Edit button -->
+                            <a href="{{ url_for('edit_recipe', recipe_id=recipe.recepieid) }}" class="btn orange accent-3 black-text">
+                                <i class="material-icons center">edit</i>
+                            </a>
+                            <!-- Delete button -->
+                            <form method="post" action="{{ url_for('delete_recipe', recipe_id=recipe.recepieid) }}" style="display: inline;">
+                                <button type="submit" class="btn orange accent-3 black-text">
+                                    <i class="material-icons center-align">delete</i>
+                                </button>
+                            </form>
+                        </div>                        
                     </div>  
                 </div>
             </div>
