@@ -1,13 +1,16 @@
 {% extends "base.html" %}
 {% block content %}
+<!--My Recipes Title Header-->
 <div id="alt-banner">
     <div class="container">
         <h2 class="center">My Recipes</h2>
         <br>
         <br>
         <div class="row">
+            <!--For loop Statement to only show recipes submitted by the current user-->
             {% for recipe in user_recipes %}
             <div class="col s12 m6 l4">
+                <!--Card div to display recipe-->
                 <div class="card">
                     <div class="card-image">
                         <img src="{{ url_for('static', filename='recipe_images/' + recipe.image_path) }}">
