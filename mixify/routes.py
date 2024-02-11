@@ -137,16 +137,11 @@ def edit_recipe(recipe_id):
         recipe_ingredients = request.form.get("recipe_ingredients")
         recipe_instructions = request.form.get("recipe_instructions")
 
-        # Process file upload
-        recipe_image = request.files['recipe_image']
-
         # Update the recipe data
         recipe.title = recipe_title
         recipe.description = recipe_description
         recipe.ingredients = recipe_ingredients
         recipe.instructions = recipe_instructions
-        if recipe_image:
-            recipe.image_path = recipe_image.filename
 
         # Commit changes to the database
         db.session.commit()
