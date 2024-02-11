@@ -4,8 +4,6 @@
 <div id="alt-banner">
     <div class="container">
         <h2 class="center">Recipes submitted by me</h2>
-        <br>
-        <br>
         <div class="row">
             <!--For loop Statement to only show recipes submitted by the current user-->
             {% for recipe in user_recipes %}
@@ -13,14 +11,17 @@
                 <!--Card div to display recipe preview-->
                 <div class="card">
                     <div class="card-content">
-                        <span class="card-title">{{ recipe.title }}</span>
+                        <span class="card-title center-align">{{ recipe.title }}</span>
+                        <hr>
+                        <br>
                         {% if recipe.image_path %}
                         <div class="card-image">
                             <img src="{{ url_for('static', filename='recipe_images/' + recipe.image_path) }}">
                             <br>
+                            <br>
                         </div>
                         {% endif %}
-                        <p>{{ recipe.description }}</p>
+                        <p class="center-align">{{ recipe.description }}</p>
                         <div class="button-container center-align">
                             <br>
                             <br>
