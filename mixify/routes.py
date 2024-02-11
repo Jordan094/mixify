@@ -42,7 +42,7 @@ def add_recipe():
         db.session.commit()
         
         # Redirect the user after adding the recipe
-        return redirect(url_for("home"))
+        return redirect(url_for("my_recipes"))
 
     return render_template("add_recipe.html")
 
@@ -85,7 +85,7 @@ def delete_recipe(recipe_id):
     # Check if the recipe exists
     if not recipe:
         flash("Recipe not found.")
-        return redirect(url_for("home"))
+        return redirect(url_for("my_recipes"))
 
     # Check if the current user is the submitter of the recipe
     if current_user != recipe.submitter_username:
@@ -97,7 +97,7 @@ def delete_recipe(recipe_id):
     db.session.commit()
 
     flash("Recipe deleted successfully.")
-    return redirect(url_for("home"))
+    return redirect(url_for("my_recipes"))
 
 
 @app.route("/edit_recipe/<int:recipe_id>", methods=["GET", "POST"])
@@ -267,7 +267,7 @@ def add_to_favorites(recipe_id):
     db.session.commit()
     
     flash('Recipe added to favorites successfully.', 'success')
-    return redirect(url_for('view_recipe', recipe_id=recipe_id))
+    return redirect(url_for('favourites.html', recipe_id=recipe_id))
 
 # Route to remove a recipe from favorites
 @app.route('/favorite/remove/<int:recipe_id>', methods=['POST'])
@@ -292,4 +292,4 @@ def remove_from_favorites(recipe_id):
     db.session.commit()
     
     flash('Recipe removed from favorites successfully.', 'success')
-    return redirect(url_for('view_recipe', recipe_id=recipe_id))
+    return redirect(url_for('favourites.html', recipe_id=recipe_id))
