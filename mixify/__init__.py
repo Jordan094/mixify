@@ -1,14 +1,18 @@
-import os
-from flask import Flask
-from flask_sqlalchemy import SQLAlchemy
+import os # Import the os module for interacting with the operating system
+from flask import Flask # Import the Flask class from the flask package
+from flask_sqlalchemy import SQLAlchemy # Import the SQLAlchemy class from the flask_sqlalchemy package
+
+# Check if the file 'env.py' exists
 if os.path.exists("env.py"):
-    import env
+    import env # If Exists Import contents of 'env.py'
 
-
+# Create a Flask application instance
 app = Flask(__name__)
-app.config["SECRET_KEY"] = os.environ.get("SECRET_KEY")
+app.config["SECRET_KEY"] = os.environ.get("SECRET_KEY") # Secret Key for Security
 app.config["SQLALCHEMY_DATABASE_URI"] = os.environ.get("DB_URL")
 
+# Create an instance of SQLAlchemy for database management
 db = SQLAlchemy(app)
 
+# Import routes from the 'mixify' package
 from mixify import routes
