@@ -1,6 +1,6 @@
 from flask import flash, render_template, request, redirect, session, url_for, abort
 from mixify import app, db
-from mixify.models import User, Recipe
+from mixify.models import User, Recipe, Favorite
 from werkzeug.security import generate_password_hash, check_password_hash
 
 # Route for the home page
@@ -217,7 +217,83 @@ def logout():
     session.pop("user")
     return redirect(url_for("login"))
 
-# Route for user logout
 @app.route("/favourites")
 def my_favourites():
-    return render_template("favourites.html")
+    # Retrieve the username from the session
+    username = session.get("user")
+
+    if not username:
+        # If the user is not logged in, you might want to redirect them to the login page
+        return redirect(url_for("login"))
+
+    # Fetch the user's favorite recipes from the database
+    user = User.query.filter_by(user_name=username).first()
+
+    if not user:
+        # USer invalid
+        return "User not found", 404
+
+    # Convert user_id to integer
+    user_id = user.id
+
+    # Fetch the user's favorite recipes from the database using the user_id
+    user_favorites = Favorite.query.filter_by(user_id=user_id).all()
+
+    # Extract the recipe IDs from the favorites
+    favorite_recipe_ids = [fav.recipe_id for fav in user_favorites]
+
+    # Fetch the actual recipe objects based on the recipe IDs
+    favorites = Recipe.query.filter(Recipe.recepieid.in_(favorite_recipe_ids)).all()
+
+    return render_template("favourites.html", favorites=favorites)
+
+# Route to add a recipe to favorites
+@app.route('/favorite/add/<int:recipe_id>', methods=['POST'])
+def add_to_favorites(recipe_id):
+    # Retrieve the username from the session
+    username = session.get("user")
+    
+    # Retrieve the user ID from the database using the username
+    user = User.query.filter_by(user_name=username).first()
+    
+    if not user:
+        flash('User not logged in.', 'error')
+        return redirect(url_for('login'))  # Redirect to login page or wherever appropriate
+    
+    recipe = Recipe.query.get_or_404(recipe_id)
+    
+    if Favorite.query.filter_by(user_id=user.id, recipe_id=recipe_id).first():
+        flash('Recipe is already in favorites.', 'error')
+        return redirect(url_for('view_recipe', recipe_id=recipe_id))
+    
+    favorite = Favorite(user_id=user.id, recipe_id=recipe_id)
+    db.session.add(favorite)
+    db.session.commit()
+    
+    flash('Recipe added to favorites successfully.', 'success')
+    return redirect(url_for('view_recipe', recipe_id=recipe_id))
+
+# Route to remove a recipe from favorites
+@app.route('/favorite/remove/<int:recipe_id>', methods=['POST'])
+def remove_from_favorites(recipe_id):
+    # Retrieve the username from the session
+    username = session.get("user")
+    
+    # Retrieve the user ID from the database using the username
+    user = User.query.filter_by(user_name=username).first()
+    
+    if not user:
+        flash('User not logged in.', 'error')
+        return redirect(url_for('login'))  # Redirect to login page or wherever appropriate
+    
+    favorite = Favorite.query.filter_by(user_id=user.id, recipe_id=recipe_id).first()
+    
+    if not favorite:
+        flash('Recipe is not in favorites.', 'error')
+        return redirect(url_for('view_recipe', recipe_id=recipe_id))
+    
+    db.session.delete(favorite)
+    db.session.commit()
+    
+    flash('Recipe removed from favorites successfully.', 'success')
+    return redirect(url_for('view_recipe', recipe_id=recipe_id))
