@@ -3,36 +3,27 @@ from mixify import app, db
 from mixify.models import User, Recipe
 from werkzeug.security import generate_password_hash, check_password_hash
 
+# Route for the home page
 @app.route("/")
 def home():
     return render_template("index.html")
 
+# Route for displaying favorite recipes
 @app.route("/favourites")
 def favourites():
     return render_template("favourites.html")
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+# Route for displaying all recipes
 @app.route("/recipes")
 def recipes():
     recipes = Recipe.query.all()
     return render_template("recipes.html", recipes=recipes)
 
+# Route for adding a new recipe
 @app.route("/add_recipe", methods=["GET", "POST"])
 def add_recipe():
-    """Generates a page with a form to add a new recipe"""
     if request.method == "POST":
+        # Extract data from the form
         recipe_title = request.form.get("recipe_title")
         recipe_description = request.form.get("recipe_description")
         recipe_ingredients = request.form.get("recipe_ingredients")
@@ -50,7 +41,7 @@ def add_recipe():
                         ingredients=recipe_ingredients, 
                         instructions=recipe_instructions, 
                         image_path=recipe_image.filename,
-                        submitter_username=submitter_username)  # Add submitter username here
+                        submitter_username=submitter_username)
         db.session.add(recipe)
         db.session.commit()
         
@@ -59,6 +50,7 @@ def add_recipe():
 
     return render_template("add_recipe.html")
 
+# Route for displaying recipes submitted by the current user
 @app.route("/my_recipes")
 def my_recipes():
     # Get the username of the currently logged-in user from the session
@@ -69,7 +61,7 @@ def my_recipes():
     
     return render_template("my_recipes.html", user_recipes=user_recipes)
 
-
+# Route for viewing a specific recipe
 @app.route("/view_recipe/<int:recipe_id>")
 def view_recipe(recipe_id):
     recipe = Recipe.query.get(recipe_id)
@@ -77,6 +69,7 @@ def view_recipe(recipe_id):
         abort(404)
     return render_template("view_recipe.html", recipe=recipe)
 
+# Route for deleting a recipe
 @app.route("/delete_recipe/<int:recipe_id>", methods=["POST"])
 def delete_recipe(recipe_id):
     # Check if the user is logged in
@@ -107,113 +100,65 @@ def delete_recipe(recipe_id):
     flash("Recipe deleted successfully.")
     return redirect(url_for("home"))
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-# Function to load signup page
+# Route for displaying the signup page
 @app.route("/signup")
 def signup():
     return render_template("signup.html")
 
-
-# Function for new users to sign up to site
+# Route and function for user registration
 @app.route("/signup", methods=["GET", "POST"])
 def register():
-    """Generates a page with a sign up form. Which allows a user to signup"""
     if request.method == "POST":
-        # Checks database to query if Chosen Username is already being used
-        existing_user = User.query.filter(
-            User.user_name == request.form.get("user_name").lower()).all()
-        # If username is in use. Alerts user and requests they chose another username
+        # Check if the chosen username is already in use
+        existing_user = User.query.filter(User.user_name == request.form.get("user_name").lower()).all()
         if existing_user:
-            flash(
-                "This username is already in use. Please try a different username")
+            flash("This username is already in use. Please try a different username")
             return redirect(url_for("register"))
 
+        # Create a new user record in the database
         user = User(
             user_name=request.form.get("user_name").lower(),
             user_first_name=request.form.get("first_name").lower(),
             user_last_name=request.form.get("last_name").lower(),
             password=generate_password_hash(request.form.get("password"))
-            
-            
         )
-        # Creates a user record in database
         db.session.add(user)
         db.session.commit()
         session["user"] = request.form.get("user_name").lower()
-        # Informs the users that signup is successful
         flash("Signup complete - Thank you for joining Mixify!")
-        # Redirects user to login page
         return redirect(url_for("home"))
 
     return render_template("login.html")
 
-
-# Function to load login page
+# Route for displaying the login page
 @app.route("/login")
 def login():
     return render_template("login.html")
 
-
-# Function for users to log in
+# Route and function for user login
 @app.route("/login", methods=["GET", "POST"])
 def sitelogin():
-    """Shows login page to user with a form to login"""
     if request.method == "POST":
-        # Ensures input username is present in Database
-        existing_user = User.query.filter(
-            User.user_name == request.form.get("user_name").lower()).all()
+        # Check if the username is present in the database
+        existing_user = User.query.filter(User.user_name == request.form.get("user_name").lower()).all()
 
         if existing_user:
-            # Check to ensure password matches user input
-            if check_password_hash(
-                    existing_user[0].password, request.form.get("password")):
+            # Check if the password matches
+            if check_password_hash(existing_user[0].password, request.form.get("password")):
                 session["user"] = request.form.get("user_name").lower()
-                # Flash message so user knows they are logged in
-                flash("You are logged in as, {}".format(
-                    request.form.get("user_name")))
-                return redirect(url_for(
-                    "recipes"))
+                flash("You are logged in as, {}".format(request.form.get("user_name")))
+                return redirect(url_for("recipes"))
             else:
-                # Error message to user if wrong password has been input
                 flash("Incorrect Username and/or Password")
                 return redirect(url_for("login"))
 
         else:
-            # Error message to user if invalid username has been input
             flash("Incorrect Username and/or Password")
             return redirect(url_for("recipes"))
 
-# Function to logout user from session
+# Route for user logout
 @app.route("/logout")
 def logout():
-    """logout user from session"""
     flash("You are no longer logged in")
     session.pop("user")
     return redirect(url_for("login"))
-
