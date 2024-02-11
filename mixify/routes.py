@@ -107,7 +107,7 @@ def delete_recipe(recipe_id):
     return redirect(url_for("home"))
 
 
-@app.route("/edit_recipe/<int:recipe_id>", methods=["POST"])
+@app.route("/edit_recipe/<int:recipe_id>", methods=["GET", "POST"])
 def edit_recipe(recipe_id):
     # Check if the user is logged in
     if "user" not in session:
@@ -149,6 +149,7 @@ def edit_recipe(recipe_id):
         flash("Recipe edited successfully.")
         return redirect(url_for("home"))
 
+    # If it's a GET request, render the template with the existing recipe data
     return render_template("edit_recipe.html", recipe=recipe)
 
 

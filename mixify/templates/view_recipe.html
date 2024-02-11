@@ -1,8 +1,8 @@
 {% extends "base.html" %}
 {% block content %}
-<!--View Recipe Title Header-->
+<!-- View Recipe Title Header -->
 <div class="container">
-    <!--Pull Recipe Title from Database-->
+    <!-- Pull Recipe Title from Database -->
     <h2>{{ recipe.title }}</h2>
     <div class="row">
         <div class="col s12 m6">
@@ -11,34 +11,32 @@
                     <img src="{{ url_for('static', filename=recipe.image_path) }}" alt="{{ recipe.title }}">
                     <span class="card-title">{{ recipe.title }}</span>
                 </div>
-                <!--Pull Recipe Description from Database-->
+                <!-- Pull Recipe Description from Database -->
                 <div class="card-content">
                     <p>{{ recipe.description }}</p>
                 </div>
-                <!--Pull Recipe Ingredient from Database-->
+                <!-- Pull Recipe Ingredient from Database -->
                 <div class="card-content">
                     <h5>Ingredients:</h5>
                     <p>{{ recipe.ingredients }}</p>
                 </div>
-                <!--Pull Recipe Instructions from Database-->
+                <!-- Pull Recipe Instructions from Database -->
                 <div class="card-content">
                     <h5>Instructions:</h5>
                     <p>{{ recipe.instructions }}</p>
                 </div>       
-                <!--Pull Submitted Username from Database and Capitalizes fist letter-->    
+                <!-- Pull Submitted Username from Database and Capitalize first letter -->    
                 <p class="center-align">Recipe submitted by: {{ recipe.submitter_username | capitalize }}</p>
-                <!--Delete button-->
+                <!-- Delete button -->
                 <form method="post" action="{{ url_for('delete_recipe', recipe_id=recipe.recepieid) }}">
                     <button type="submit">
                         Delete Recipe
                     </button>
                 </form>
-                <!--Edit button-->
-                <form method="post" action="{{ url_for('edit_recipe', recipe_id=recipe.recepieid) }}">
-                    <button type="submit">
-                        Edit Recipe
-                    </button>
-                </form>
+                <!-- Edit button -->
+                <a href="{{ url_for('edit_recipe', recipe_id=recipe.recepieid) }}" class="btn">
+                    Edit Recipe
+                </a>
             </div>
         </div>
     </div>
