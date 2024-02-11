@@ -9,14 +9,16 @@
         <div class="row">
             <!--For loop Statement to only show recipes submitted by the current user-->
             {% for recipe in user_recipes %}
-            <div class="col s4 m6 6">
+            <div class="col s4 m4">
                 <!--Card div to display recipe preview-->
                 <div class="card">
                     <div class="card-content">
                         <span class="card-title">{{ recipe.title }}</span>
+                        {% if recipe.image_path %}
                         <div class="card-image">
                             <img src="{{ url_for('static', filename='recipe_images/' + recipe.image_path) }}">
                         </div>
+                        {% endif %}
                         <p>{{ recipe.description }}</p>
                         <!-- View button -->
                         <a href="{{ url_for('view_recipe', recipe_id=recipe.recepieid) }}" class="btn orange accent-3 black-text">
