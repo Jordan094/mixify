@@ -11,18 +11,22 @@
                     <img src="{{ url_for('static', filename=recipe.image_path) }}" alt="{{ recipe.title }}">
                     <span class="card-title">{{ recipe.title }}</span>
                 </div>
+                <!--Pull Recipe Description from Database-->
                 <div class="card-content">
                     <p>{{ recipe.description }}</p>
                 </div>
+                <!--Pull Recipe Ingredient from Database-->
                 <div class="card-content">
                     <h5>Ingredients:</h5>
                     <p>{{ recipe.ingredients }}</p>
                 </div>
+                <!--Pull Recipe Instructions from Database-->
                 <div class="card-content">
                     <h5>Instructions:</h5>
                     <p>{{ recipe.instructions }}</p>
-                </div>
-                <p class="center-align">Recipe submitted by: {{ recipe.submitter_username }}</p>
+                </div>       
+                <!--Pull Submitted Username from Database and Capitalizes fist letter-->    
+                <p class="center-align">Recipe submitted by: {{ recipe.submitter_username | capitalize }}</p>
                 <!--Delete button-->
                 <form method="post" action="{{ url_for('delete_recipe', recipe_id=recipe.recepieid) }}">
                     <button type="submit">
