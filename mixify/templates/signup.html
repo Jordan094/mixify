@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% block content %}
+<!--Sign Up Title Header-->
 <div class="row">
     <h2 class="page-title-responsive center">Sign up</h2>
     <form class="col s12 m8 offset-m2" method="POST" action="{{ url_for('signup') }}" onsubmit="return validateAge()">
@@ -46,7 +47,7 @@
         </div>
     </form>
 </div>
-
+<!--Redirct button to login.html for users who are already registered-->
 <div class="row">
     <div class="col s12">
         <p class="center-align">
