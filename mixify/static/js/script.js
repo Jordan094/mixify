@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', function() {
     console.log('Sidenav instances:', instances);
   });
   
-// Function to Validate user is 18
+// Function to Validate user is 18 Credit to https://www.javatpoint.com/ for guidance
   function validateAge() {
     var dobInput = document.getElementById('dob');
     var dobValue = dobInput.value;
