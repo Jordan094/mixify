@@ -8,16 +8,19 @@ from werkzeug.security import generate_password_hash, check_password_hash
 def home():
     return render_template("index.html")
 
+
 # Route for displaying favorite recipes
 @app.route("/favourites")
 def favourites():
     return render_template("favourites.html")
+
 
 # Route for displaying all recipes
 @app.route("/recipes")
 def recipes():
     recipes = Recipe.query.all()
     return render_template("recipes.html", recipes=recipes)
+
 
 # Route for adding a new recipe
 @app.route("/add_recipe", methods=["GET", "POST"])
@@ -50,6 +53,7 @@ def add_recipe():
 
     return render_template("add_recipe.html")
 
+
 # Route for displaying recipes submitted by the current user
 @app.route("/my_recipes")
 def my_recipes():
@@ -61,6 +65,7 @@ def my_recipes():
     
     return render_template("my_recipes.html", user_recipes=user_recipes)
 
+
 # Route for viewing a specific recipe
 @app.route("/view_recipe/<int:recipe_id>")
 def view_recipe(recipe_id):
@@ -68,6 +73,7 @@ def view_recipe(recipe_id):
     if not recipe:
         abort(404)
     return render_template("view_recipe.html", recipe=recipe)
+
 
 # Route for deleting a recipe
 @app.route("/delete_recipe/<int:recipe_id>", methods=["POST"])
@@ -100,10 +106,12 @@ def delete_recipe(recipe_id):
     flash("Recipe deleted successfully.")
     return redirect(url_for("home"))
 
+
 # Route for displaying the signup page
 @app.route("/signup")
 def signup():
     return render_template("signup.html")
+
 
 # Route and function for user registration
 @app.route("/signup", methods=["GET", "POST"])
@@ -130,10 +138,12 @@ def register():
 
     return render_template("login.html")
 
+
 # Route for displaying the login page
 @app.route("/login")
 def login():
     return render_template("login.html")
+
 
 # Route and function for user login
 @app.route("/login", methods=["GET", "POST"])
@@ -155,6 +165,7 @@ def sitelogin():
         else:
             flash("Incorrect Username and/or Password")
             return redirect(url_for("recipes"))
+
 
 # Route for user logout
 @app.route("/logout")
