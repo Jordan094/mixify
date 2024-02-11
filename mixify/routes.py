@@ -28,10 +28,7 @@ def add_recipe():
         recipe_description = request.form.get("recipe_description")
         recipe_ingredients = request.form.get("recipe_ingredients")
         recipe_instructions = request.form.get("recipe_instructions")
-        
-        # Process file upload
-        recipe_image = request.files['recipe_image']
-        
+
         # Retrieve the currently logged-in user's username from the session
         submitter_username = session.get("user")
         
@@ -40,7 +37,6 @@ def add_recipe():
                         description=recipe_description, 
                         ingredients=recipe_ingredients, 
                         instructions=recipe_instructions, 
-                        image_path=recipe_image.filename,
                         submitter_username=submitter_username)
         db.session.add(recipe)
         db.session.commit()
