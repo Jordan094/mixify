@@ -107,6 +107,56 @@ def delete_recipe(recipe_id):
     return redirect(url_for("home"))
 
 
+@app.route("/edit_recipe/<int:recipe_id>", methods=["POST"])
+def edit_recipe(recipe_id):
+    # Check if the user is logged in
+    if "user" not in session:
+        flash("You need to log in to edit a recipe.")
+        return redirect(url_for("login"))
+
+    # Get the current user's username
+    current_user = session["user"]
+
+    # Retrieve the recipe from the database
+    recipe = Recipe.query.get(recipe_id)
+
+    # Check if the recipe exists
+    if not recipe:
+        flash("Recipe not found.")
+        return redirect(url_for("home"))
+
+    # Check if the current user is the submitter of the recipe
+    if current_user != recipe.submitter_username:
+        flash("You can only edit recipes that you have submitted!")
+        return redirect(url_for("recipes"))
+
+    if request.method == "POST":
+        # Extract data from the form
+        recipe_title = request.form.get("recipe_title")
+        recipe_description = request.form.get("recipe_description")
+        recipe_ingredients = request.form.get("recipe_ingredients")
+        recipe_instructions = request.form.get("recipe_instructions")
+
+        # Process file upload
+        recipe_image = request.files['recipe_image']
+
+        # Update the recipe data
+        recipe.title = recipe_title
+        recipe.description = recipe_description
+        recipe.ingredients = recipe_ingredients
+        recipe.instructions = recipe_instructions
+        if recipe_image:
+            recipe.image_path = recipe_image.filename
+
+        # Commit changes to the database
+        db.session.commit()
+
+        flash("Recipe edited successfully.")
+        return redirect(url_for("home"))
+
+    return render_template("edit_recipe.html", recipe=recipe)
+
+
 # Route for displaying the signup page
 @app.route("/signup")
 def signup():
