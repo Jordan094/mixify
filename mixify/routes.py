@@ -9,10 +9,7 @@ def home():
     return render_template("index.html")
 
 
-# Route for displaying favorite recipes
-@app.route("/favourites")
-def favourites():
-    return render_template("favourites.html")
+
 
 
 # Route for displaying all recipes
@@ -219,3 +216,8 @@ def logout():
     flash("You are no longer logged in")
     session.pop("user")
     return redirect(url_for("login"))
+
+# Route for user logout
+@app.route("/favourites")
+def my_favourites():
+    return render_template("favourites.html")
