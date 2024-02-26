@@ -4,24 +4,33 @@
 <div id="alt-banner">
     <div class="container">
         <h2 class="center">All Recipes</h2>
+        <br>
         <div class="row">
             <!--For loop Statement to show all recipes held in DB-->
             {% for recipe in recipes %}
-            <!--Card div to display recipe preview-->
-            <div class="col s12 m6 l4">
+            <div class="col s4 m4">
+                <!--Card div to display recipe preview-->
                 <div class="card">
-                    <div class="card-title center-align">
-                        <span class="card-title black-text">{{ recipe.title }}</span>
+                    <div class="card-content">
+                        <span class="card-title center-align">{{ recipe.title }}</span>
                         <hr>
-                    </div>
-                    <div class="card-content center-align">
-                        <p>{{ recipe.description }}</p>
-                        <br>
-                    </div>
-                    <!--Link so user can view the full recipe-->
-                    <div class="card-action center-align">
-                        <a class="center-align" href="{{ url_for('view_recipe', recipe_id=recipe.recepieid) }}">View Recipe</a>
-                    </div>                               
+                        <p class="center-align">{{ recipe.description }}</p>
+                        <div class="button-container center-align">
+                            <hr>
+                            <!-- View button -->
+                            <a href="{{ url_for('view_recipe', recipe_id=recipe.recepieid) }}" class="btn orange accent-3 black-text">
+                                <i class="material-icons lcenter">visibility</i>
+                            </a>
+                            <!-- Bookmark button -->
+                            <a href="" class="btn orange accent-3 black-text">
+                                <i class="material-icons center">bookmark</i>
+                            </a>
+                            <!-- Favorite button -->
+                            <a href="{{ url_for('add_to_favorites', recipe_id=recipe.recepieid) }}" class="btn orange accent-3 black-text">
+                                <i class="material-icons center">favorite</i>
+                            </a>
+                        </div>                        
+                    </div>  
                 </div>
             </div>
             {% endfor %}
