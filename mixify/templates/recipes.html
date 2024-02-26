@@ -14,7 +14,11 @@
                     <div class="card-content">
                         <span class="card-title center-align">{{ recipe.title }}</span>
                         <hr>
-                        <p class="center-align">{{ recipe.description }}</p>
+                        {% if recipe.description | length > 150 %}
+                            <p class="center-align">{{ recipe.description | truncate(150) }} <a href="{{ url_for('view_recipe', recipe_id=recipe.recepieid) }}" class="orange-text see-more-link" data-description="{{ recipe.description }}">See more</a></p>
+                        {% else %}
+                            <p class="center-align">{{ recipe.description }}</p>
+                        {% endif %}
                         <div class="button-container center-align">
                             <hr>
                             <!-- View button -->
