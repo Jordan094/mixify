@@ -195,7 +195,7 @@ def sitelogin():
             # Check if the password matches
             if check_password_hash(existing_user[0].password, request.form.get("password")):
                 session["user"] = request.form.get("user_name").lower()
-                flash("You are logged in as, {}".format(request.form.get("user_name")))
+                flash("You are logged in as: {}".format(request.form.get("user_name")))
                 return redirect(url_for("recipes"))
             else:
                 flash("Incorrect Username and/or Password")

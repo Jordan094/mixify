@@ -5,36 +5,31 @@
         <div class="row">
             <!-- Page Header -->
             <h2 class="page-title-responsive center">Favorite Recipes</h2>
+            <br>
             {% for recipe in favorites %}
-                {% set recipe_id = recipe.recepieid %}
-                <div class="col s4 m4">
-                    <div class="card">
-                        <div class="card-content">
-                            <span class="card-title center-align">{{ recipe.title }}</span>
-                            <hr>
+            <div class="col s4 m4">
+                <!--Card div to display recipe preview-->
+                <div class="card">
+                    <div class="card-content">
+                        <span class="card-title center-align">{{ recipe.title }}</span>
+                        <hr>
+                        {% if recipe.description | length > 75 %}
+                            <p class="center-align">{{ recipe.description | truncate(75) }} <a href="{{ url_for('view_recipe', recipe_id=recipe.recepieid) }}" class="orange-text see-more-link" data-description="{{ recipe.description }}">See more</a></p>
+                        {% else %}
                             <p class="center-align">{{ recipe.description }}</p>
-                            <br>
-                        </div>
-                        <div class="card-action center-align">
-                            <a href="{{ url_for('view_recipe', recipe_id=recipe.recepieid) }}" class="btn orange accent-3">View Recipe</a>
-                            <br>
-                            <br>
-                            <form method="post" action="{{ url_for('remove_from_favorites', recipe_id=recipe.recepieid) }}">
-                                <button type="submit" class="btn orange accent-3">Remove from Favorites</button>
-                            </form>
+                        {% endif %}
+                        <div class="button-container center-align">
+                            <hr>
+                            <!-- View button -->
+                            <a href="{{ url_for('view_recipe', recipe_id=recipe.recepieid) }}" class="btn orange accent-3 black-text">
+                                <i class="material-icons lcenter">visibility</i>
+                            </a>
                         </div>                        
-                    </div>
+                    </div>  
                 </div>
+            </div>
             {% endfor %}
         </div>
-    </div>
-    <!-- Home Button -->
-    <div class="row">
-        <div class="col s12">
-            <p class="center-align">
-                <a href="{{ url_for('home') }}">Back to Home</a>
-            </p>
-        </div>  
     </div>
 </div>
 {% endblock %}
