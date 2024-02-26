@@ -267,7 +267,9 @@ def add_to_favorites(recipe_id):
     db.session.commit()
     
     flash('Recipe added to favorites successfully.', 'success')
-    return redirect(url_for('favourites.html', recipe_id=recipe_id))
+    return redirect(url_for('my_favourites'))
+
+
 
 # Route to remove a recipe from favorites
 @app.route('/favorite/remove/<int:recipe_id>', methods=['POST'])
@@ -292,4 +294,6 @@ def remove_from_favorites(recipe_id):
     db.session.commit()
     
     flash('Recipe removed from favorites successfully.', 'success')
-    return redirect(url_for('favourites.html', recipe_id=recipe_id))
+    return redirect(url_for('my_favourites'))
+
+    
