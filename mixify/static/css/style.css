@@ -78,6 +78,24 @@ nav a, ul a {
   margin-right: 10%;
 }
 
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.page-wrapper {
+  min-height: 100%;
+  position: relative;
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 60px; /* Adjust height as needed */
+}
+
 /* Styling for the page footer */
 .page-footer {
   padding-top: 3px;
