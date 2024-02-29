@@ -12,12 +12,7 @@ body {
 
 /* Styling for the main content section */
 main {
-  flex: 1 0 auto;
-}
-
-/* Styling for the footer */
-footer {
-  margin-top: auto; /* Pushing footer to the bottom */
+  flex: 1 0 auto; /* Let main content area grow to fill remaining space */
 }
 
 /* Styling for the home card */
@@ -89,17 +84,16 @@ html, body {
   position: relative;
 }
 
-footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  height: 60px; /* Adjust height as needed */
+.page-content {
+  flex: 1 0 auto;
 }
 
 /* Styling for the page footer */
 .page-footer {
-  padding-top: 3px;
-  padding-bottom: 3px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  padding: 1px;
 }
 
 /* Styling for social media icons in the footer */
