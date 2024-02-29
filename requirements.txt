@@ -1,0 +1,10 @@
+blinker==1.7.0
+click==8.1.7
+Flask==2.2.5
+Flask-SQLAlchemy==2.5.1
+greenlet==3.0.3
+itsdangerous==2.1.2
+psycopg2==2.9.9
+SQLAlchemy==1.4.46
+Werkzeug==3.0.1
+web: python run.py
