@@ -78,6 +78,7 @@ def delete_recipe(recipe_id):
 
     # Get the current user's username
     current_user = session["user"]
+    print("Current User:", current_user)  # Debug print
 
     # Retrieve the recipe from the database
     recipe = Recipe.query.get(recipe_id)
@@ -87,8 +88,8 @@ def delete_recipe(recipe_id):
         flash("Recipe not found.")
         return redirect(url_for("my_recipes"))
 
-    # Check if the current user is the submitter of the recipe
-    if current_user != recipe.submitter_username:
+    # Check if the current user is the submitter of the recipe or an admin
+    if current_user != recipe.submitter_username and current_user != "admin":
         flash("You can only delete recipes that you have submitted!")
         return redirect(url_for("recipes"))
 
@@ -98,6 +99,7 @@ def delete_recipe(recipe_id):
 
     flash("Recipe deleted successfully.")
     return redirect(url_for("my_recipes"))
+
 
 
 @app.route("/edit_recipe/<int:recipe_id>", methods=["GET", "POST"])
