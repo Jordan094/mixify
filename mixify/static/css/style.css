@@ -103,3 +103,7 @@ nav a, ul a {
 .card .card-content{
   padding: 8px; /* Adding padding to card content */
 }
+
+.row .col.s12{
+  margin-bottom: 2%;
+}
