@@ -5,36 +5,38 @@
     <h2 class="page-title-responsive center">Sign up</h2>
     <form class="col s12 m8 offset-m2" method="POST" action="{{ url_for('signup') }}" onsubmit="return validateAge()">
         <div class="card-panel">
+            <p class="page-title-responsive center">Join the mixify community now!</p>
             <!--Username Input Field-->
             <div class="row">
                 <div class="input-field col s12">
                     <input id="user_name" name="user_name" type="text" minlength="3" maxlength="20" pattern="^[a-zA-Z0-9]{3,30}$" class="validate" required>
-                    <label for="user_name">Enter Username</label>
+                    <label for="user_name">Enter Username *</label>
                 </div>
             </div>
             <div class="row">
                 <!--First Name Input Field-->
                 <div class="input-field col s12">
                     <input id="first_name" name="first_name" type="text" class="validate" required>
-                    <label for="first_name">First Name:</label>
+                    <label for="first_name">First Name: *</label>
                 </div>
                 <!--Last Name Input Field-->
                 <div class="input-field col s12">
                     <input id="last_name" name="last_name" type="text" class="validate" required>
-                    <label for="last_name">Last Name:</label>
+                    <label for="last_name">Last Name: *</label>
                 </div>
                 <div class="input-field col s12">
                     <input id="dob" name="dob" type="date" class="validate" required>
-                    <label for="dob">Date of Birth:</label>
+                    <label for="dob">Date of Birth: *</label>
                 </div>
             </div>
             <!--Password Input Field-->
             <div class="row">
                 <div class="input-field col s12">
                     <input id="password" name="password" type="password" minlength="5" maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" class="validate" required>
-                    <label for="password">Password</label>
+                    <label for="password">Password - between 5-15 characters. *</label>
                 </div>
             </div>
+            <p class="page-title-responsive center">* Indicates required!</p>
             <!--Sign Up/ Submit Button-->
             <div class="row">
                 <button type="submit" class="btn waves-effect black col s12">
