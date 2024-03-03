@@ -10,7 +10,7 @@
           <h5 class="header col s12">A website for sharing your favourite cocktails and discovering new ones.</h5>
         </div>
         <div class="row center">
-          <a href="{{ url_for('login') }}" id="download-button" class="btn-large waves-effect waves-light black">Get Started</a>
+          <a href="{% if session.get('user') %} {{ url_for('my_recipes') }} {% else %} {{ url_for('login') }} {% endif %}" id="download-button" class="btn-large waves-effect waves-light black">Get Started</a>
           <br>
           <br>
         </div>
