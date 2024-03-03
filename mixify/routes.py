@@ -183,6 +183,7 @@ def register():
 # Route for displaying the login page
 @app.route("/login")
 def login():
+
     return render_template("login.html")
 
 
@@ -190,12 +191,17 @@ def login():
 @app.route("/login", methods=["GET", "POST"])
 def sitelogin():
     if request.method == "POST":
+        # Check if the user is already logged in
+        if "user" in session:
+            flash("You are already logged in.")
+            return redirect(url_for("my_recipes"))  # Redirect to my_recipes page if already logged in
+        
         # Check if the username is present in the database
-        existing_user = User.query.filter(User.user_name == request.form.get("user_name").lower()).all()
+        existing_user = User.query.filter(User.user_name == request.form.get("user_name").lower()).first()
 
         if existing_user:
             # Check if the password matches
-            if check_password_hash(existing_user[0].password, request.form.get("password")):
+            if check_password_hash(existing_user.password, request.form.get("password")):
                 session["user"] = request.form.get("user_name").lower()
                 flash("You are logged in as: {}".format(request.form.get("user_name")))
                 return redirect(url_for("recipes"))
@@ -206,6 +212,10 @@ def sitelogin():
         else:
             flash("Incorrect Username and/or Password")
             return redirect(url_for("recipes"))
+
+    # If it's a GET request, render the login template
+    return render_template("login.html")
+
 
 
 # Route for user logout
