@@ -72,5 +72,48 @@
 
 [Pallette Created Using Coolors.co](https://coolors.co/)
 
+* The reason I have went with the above colour scheme is because I thought that it imitated the colours of a cocktail. The background of the site is orange that has a vertical gradient into. I went with a black font on my navigation bar and majority of the site as it contrasted well with the orange and yellow. From the middle toward the bottom of the site for example the get started button and the footer I used black boxes with the light yellow for text and icons. This blended in perfectly with the background but still kept full readability.
 
+## Typography
 
+I have chosen the Fira-Sans Font. This is provided by Google Fonts and [can be found here.](https://fonts.google.com/specimen/Outfit)
+
+I have used the regular font weight for standard text and chosen a weight of 600 when adding emphasis such as on the heading and title text.
+
+I have selected sans-serif to be the default font if Firs Sans can not be loaded.
+
+## Images Used
+
+* I have only used one image throghout my whole site. I have used a cocktail glass outline from [VectorStock](https://www.vectorstock.com/royalty-free-vector/one-line-continuous-cocktail-wine-glass-symbol-vector-45757694) I used photoshop to alter the image. I stretched the line at the bottom of the glass to fill a 1920 x 1080 desktop screen and added the gradient background colours.
+
+* I intend the add the facility to allow users to submit photos of their drinks in later releases of the site.
+
+## Icons
+
+I have used fontawesome icons for the external link icons where are present in the footer.
+
+# **Structure**
+
+# **Wireframes**
+
+Here are all of the wireframes designed for this page broken down into device level. I desgined these wireframes with mobile first in mind and due to the nature of the site and the size of the content there was no changes needed to be made in terms of content displayed so I have combined my mobile and tablet wireframes into one.
+
+* Homepage
+
+* Signup Page
+
+* Login Page
+
+* All Recipes Page
+
+* My Recipes Page
+
+* Favourite Recipes Page
+
+* Add Recipes Page
+
+* View Recipes Page
+
+* Delete Recipes Page
+
+* 404 Page
