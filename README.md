@@ -68,7 +68,7 @@
 
 ## Colour Pallete
 
-![Mixify Colour Palette](/images/readme/coolors.png)
+![Mixify Colour Palette](mixify/images/readme/coolors.png)
 
 [Pallette Created Using Coolors.co](https://coolors.co/)
 
