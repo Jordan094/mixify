@@ -84,7 +84,9 @@ I have selected sans-serif to be the default font if Firs Sans can not be loaded
 
 ## Images Used
 
-* I have only used one image throghout my whole site. I have used a cocktail glass outline from [VectorStock](https://www.vectorstock.com/royalty-free-vector/one-line-continuous-cocktail-wine-glass-symbol-vector-45757694) I used photoshop to alter the image. I stretched the line at the bottom of the glass to fill a 1920 x 1080 desktop screen and added the gradient background colours.
+* I have only used one image throghout my whole site which is on the index.html landing page. I have used a cocktail glass outline from [VectorStock](https://www.vectorstock.com/royalty-free-vector/one-line-continuous-cocktail-wine-glass-symbol-vector-45757694) I used photoshop to alter the image. I stretched the line at the bottom of the glass to fill a 1920 x 1080 desktop screen and added the gradient background colours.
+
+* To keep the website simple on medium and smaller devices the background resizes and only the underline is visible. So text is always clear and readable.
 
 * I intend the add the facility to allow users to submit photos of their drinks in later releases of the site.
 
@@ -117,3 +119,30 @@ Here are all of the wireframes designed for this page broken down into device le
 * Delete Recipes Page
 
 * 404 Page
+
+## Website Layout
+
+The website has been desinged using Python, ElephantSQL & PostgreSQL Javascript, HTML, CSS and Materialise CSS. It has been desinged using a mobile first approach.
+The website has a landing homepage that details the main purpose of the site and has a promintent get started button which takes the user to the signup page.
+There is also a navbar and footer which is present on all pages.
+
+* Base.html page: Although this page is not shown to the user it is one of the most important pages of my site when it comes to the deisgn. This is where the navbar has been designed and also the footer. This is also where all of the scripts are loaded on the site and the extra CSS outside of materialise. The navbar is designed to display certain links depending if the user is logged in or not. This is also where the flashed message alerts for the user are stored for use.
+
+* Landing page (index.html): This is the page the user is shown upon first time access to the website. The Navbar is present at the top and also there is a title of the page with a small sentence detailing the site purpose, with a get started button which directs the user to the Signup Page if the user is not logged in and directs them to the my recipes page if they are. Underneath the Get Started button there are 3 cards. Displayed in a grid format which changes depending on what device it is viewed on that highlights some of the sites main features - Which are Contribute, Discover and Favourite. The cards also have MaterialiseCSS icons in each. The footer is also present.
+
+[Screenshots]
+
+* Signup page: This is the page where the user will create an account it is a simple form that requires the user to enter the following information.
+** Username
+** First Name
+** Last Name
+** Date of Birth
+** Password
+
+* All of the fields are requiured to be completed by the user to sign up and this has been re-iterated with a message saying "* Indicates required!" at the bottom of the signup page before the sign up button.
+* The website also requires the user to be at least 18 or over to join the site and there is a Javascript function in place that checks this to prevent under 18s signing up.
+* Once a user has signed up a message will flash stating "Signup complete - Thank you for joining Mixify!"
+
+[Screenshots]
+
+* Login page: This page is simple and contains little information. There is 2 input boxes. One for the username, the other for the password. There is an Enter button underneath that, if the correct information is input, the user will be logged in to thier account. There is also a message at the bottom saying "Not yet registered? Sign up here." which a link that will take them to the sign up page if they havent signed up yet. Once a user is logged into their account they will be directed to the All Recipes page and a message will flash up to the user stating "You are logged in as: (Username)" At this point, the navbar will also update to remove the signup and login links and now show the All Recipes, My Recipes, Add Recipe, My Favourite and Logout Links.
