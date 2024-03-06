@@ -70,5 +70,7 @@
 
 ![Mixify Colour Palette](/images/readme/coolors.png)
 
+[Pallette Created Using Coolors.co](https://coolors.co/)
+
 
 
