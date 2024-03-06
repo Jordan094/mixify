@@ -64,7 +64,11 @@
 * Quick access links to external sites in the footer.
 * 404 page for invalid content with a report a problem form to inform the site owner.
 
+# **Design**
 
+## Colour Pallete
+
+![Mixify Colour Palette](/images/readme/coolors.png)
 
 
 
