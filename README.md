@@ -11,13 +11,37 @@
 
 ## Contents
 
-- [**User Experience**](#user-experience)
-  - [Background](#background)
-  - [Site Owners Goals](#site-owners-goals)
-  - [First Time User Goals](#first-time-user-goals)
-  - [Frequent User Goals](#frequent-user-goals)
-  - [Features To Be Included](#features-to-be-included)
- 
+  * [**Mixify - Cocktail Sharing Website**](#--mixify---cocktail-sharing-website--)
+    + [Milestone Project 3 - Backend Development](#milestone-project-3---backend-development)
+  * [Live Project](#live-project)
+  * [Contents](#contents)
+- [**User Experience**](#--user-experience--)
+  * [Background](#background)
+  * [Site Owners Goals](#site-owners-goals)
+  * [First Time User Goals](#first-time-user-goals)
+  * [Frequent User Goals](#frequent-user-goals)
+  * [Features To Be Included](#features-to-be-included)
+- [**Design**](#--design--)
+  * [Colour Pallete](#colour-pallete)
+  * [Typography](#typography)
+  * [Images Used](#images-used)
+  * [Icons](#icons)
+- [**Structure**](#--structure--)
+- [**Wireframes**](#--wireframes--)
+  * [Website Layout](#website-layout)
+    + [Base.html page:](#basehtml-page-)
+    + [Landing page (index.html):](#landing-page--indexhtml--)
+    + [Signup page:](#signup-page-)
+    + [Login page:](#login-page-)
+    + [All Recipes Page:](#all-recipes-page-)
+    + [My Recipes Page:](#my-recipes-page-)
+    + [Add Recipe Page:](#add-recipe-page-)
+    + [Edit Recipe Page:](#edit-recipe-page-)
+    + [View recipe page:](#view-recipe-page-)
+    + [My Favourites page:](#my-favourites-page-)
+  * [Features](#features)
+    + [Under 18 sign up prevention.](#under-18-sign-up-prevention)
+    + [User alert messages.](#user-alert-messages)
 
 # **User Experience**
 
@@ -126,13 +150,16 @@ The website has been desinged using Python, ElephantSQL & PostgreSQL Javascript,
 The website has a landing homepage that details the main purpose of the site and has a promintent get started button which takes the user to the signup page.
 There is also a navbar and footer which is present on all pages.
 
-* Base.html page: Although this page is not shown to the user it is one of the most important pages of my site when it comes to the deisgn. This is where the navbar has been designed and also the footer. This is also where all of the scripts are loaded on the site and the extra CSS outside of materialise. The navbar is designed to display certain links depending if the user is logged in or not. This is also where the flashed message alerts for the user are stored for use.
+### Base.html page:
+Although this page is not shown to the user it is one of the most important pages of my site when it comes to the deisgn. This is where the navbar has been designed and also the footer. This is also where all of the scripts are loaded on the site and the extra CSS outside of materialise. The navbar is designed to display certain links depending if the user is logged in or not. This is also where the flashed message alerts for the user are stored for use.
 
-* Landing page (index.html): This is the page the user is shown upon first time access to the website. The Navbar is present at the top and also there is a title of the page with a small sentence detailing the site purpose, with a get started button which directs the user to the Signup Page if the user is not logged in and directs them to the my recipes page if they are. Underneath the Get Started button there are 3 cards. Displayed in a grid format which changes depending on what device it is viewed on that highlights some of the sites main features - Which are Contribute, Discover and Favourite. The cards also have MaterialiseCSS icons in each. The footer is also present.
+### Landing page (index.html):
+This is the page the user is shown upon first time access to the website. The Navbar is present at the top and also there is a title of the page with a small sentence detailing the site purpose, with a get started button which directs the user to the Signup Page if the user is not logged in and directs them to the my recipes page if they are. Underneath the Get Started button there are 3 cards. Displayed in a grid format which changes depending on what device it is viewed on that highlights some of the sites main features - Which are Contribute, Discover and Favourite. The cards also have MaterialiseCSS icons in each. The footer is also present.
 
 [Screenshots]
 
-* Signup page: This is the page where the user will create an account it is a simple form that requires the user to enter the following information.
+### Signup page: 
+This is the page where the user will create an account it is a simple form that requires the user to enter the following information.
   * Username
   * First Name
   * Last Name
@@ -145,19 +172,23 @@ There is also a navbar and footer which is present on all pages.
 
 [Screenshots]
 
-* Login page: This page is simple and contains little information. There is 2 input boxes. One for the username, the other for the password. There is an Enter button underneath that, if the correct information is input, the user will be logged in to thier account. There is also a message at the bottom saying "Not yet registered? Sign up here." which a link that will take them to the sign up page if they havent signed up yet. Once a user is logged into their account they will be directed to the All Recipes page and a message will flash up to the user stating "You are logged in as: (Username)" At this point, the navbar will also update to remove the signup and login links and now show the All Recipes, My Recipes, Add Recipe, My Favourite and Logout Links.
+### Login page:
+* This page is simple and contains little information. There is 2 input boxes. One for the username, the other for the password. There is an Enter button underneath that, if the correct information is input, the user will be logged in to thier account. There is also a message at the bottom saying "Not yet registered? Sign up here." which a link that will take them to the sign up page if they havent signed up yet. Once a user is logged into their account they will be directed to the All Recipes page and a message will flash up to the user stating "You are logged in as: (Username)" At this point, the navbar will also update to remove the signup and login links and now show the All Recipes, My Recipes, Add Recipe, My Favourite and Logout Links.
 
 [Screenshots]
 
-* All Recipes Page: This page shows the user previews of all the recipes that have been submitted in a card format. The user is shown the title of the recipe, a brief description and underneath a view icon which when clicks displays the full recipe to the user. I have chosen to only display a set character limit on the description to ensure all of the cards are the same size. I have also added a see more button at the end of the description if the user wants to click that button instead. The cards are responsive to the device being used at the time. For example there is 3 cards horizontally on desktop devices and 1 card shown horizontally on mobile devices.
+### All Recipes Page:
+* This page shows the user previews of all the recipes that have been submitted in a card format. The user is shown the title of the recipe, a brief description and underneath a view icon which when clicks displays the full recipe to the user. I have chosen to only display a set character limit on the description to ensure all of the cards are the same size. I have also added a see more button at the end of the description if the user wants to click that button instead. The cards are responsive to the device being used at the time. For example there is 3 cards horizontally on desktop devices and 1 card shown horizontally on mobile devices.
 
 [Screenshots]
 
-* My Recipes Page: This page shows the user previews of all the recipes that  that have been submitted by that user only in a card format. The user is shown the title of the recipe, a brief description and underneath the same as the all recipes page. However, the user is now shown 2 extra buttons, a edit button and a delete button. They will take the user to the edit recipe page and the delete recipe page. The page also displays all of the information to the user in the same way as the all recipes page to help with the consistency of the site.
+### My Recipes Page:
+* This page shows the user previews of all the recipes that have been submitted by that user only in a card format. The user is shown the title of the recipe, a brief description and underneath the same as the all recipes page. However, the user is now shown 2 extra buttons, a edit button and a delete button. They will take the user to the edit recipe page and the delete recipe page. The page also displays all of the information to the user in the same way as the all recipes page to help with the consistency of the site.
 
 [Screenshots]
 
-* Add Recipe Page: This page contains a form similiar to the sign up page. The form has 4 boxes for the user to submit information.
+### Add Recipe Page:
+* This page contains a form similiar to the sign up page. The form has 4 boxes for the user to submit information.
   * Recipe title
   * Recipe Description (A minimum of 70 characters is required.)
   * Recipe Ingredients
@@ -167,12 +198,14 @@ There is also a navbar and footer which is present on all pages.
 
 [Screenshots]
 
-* Edit Recipe Page: This page contains the same form as the above Add Recipe page, however the website will only let you edit the recipe if the username of the current user matches that of the user that submitted the recipe.
+### Edit Recipe Page:
+* This page contains the same form as the above Add Recipe page, however the website will only let you edit the recipe if the username of the current user matches that of the user that submitted the recipe.
 * The form will already be pre-populated with all of the infomation that had been previously submiited so that the user will not have to re-enter any information, only edit what is needed at the time.
 
 [Screenshots]
 
-* View recipe page: The user can view the full recipe page by clicking on either the see more button on the recipe card or at the bottom of the card clicking on the view icon. These buttons are present on the following pages. All recipes, My recipes and Favourite recipes. When viewing the full recipe the user is shown the title of the recipe at the top of the page just below the nav bar and then a content box showing the following.
+### View recipe page:
+* The user can view the full recipe page by clicking on either the see more button on the recipe card or at the bottom of the card clicking on the view icon. These buttons are present on the following pages. All recipes, My recipes and Favourite recipes. When viewing the full recipe the user is shown the title of the recipe at the top of the page just below the nav bar and then a content box showing the following.
 
   * Full recipe description.
   * All of the ingredients needed.
@@ -182,3 +215,59 @@ There is also a navbar and footer which is present on all pages.
 
 * All of the above buttons will allow the user to complete their respective functions. As previously mentioned, the edit button will only work if the current user matches the user who submitted the recipe.
 * The delete button works slightly different as it works if the current user matches the user who submitted the recipe and also will work if the username is Admin. An account that I have created to remove any content that may be submitted which is not suitable.
+* When the favourite button is pressed the user will be given the message "Recipe added to favorites successfully." the user will then be directed to the My Favourites page.
+
+[Screenshots]
+
+### My Favourites page:
+* This user is almost a mirror image of the my recipes page. This page shows the user previews of all the recipes that have been favourited by that user only in a card format. Unlike the my recipes page, the user is only able to view the main recipe they are unable to see the buttons for edit and delete. If a user removes a recipe from their favourites it will no longer display on this page.
+
+[Screenshots]
+
+## Features
+
+### Under 18 sign up prevention.
+
+* When a user completes the sign up form if they have input a date of birth that would make them under the age of 18 a Javascript alert will pop up stating "You must be 18 or older to sign up." They will be unable to create an account if the date of birth is not equal to or greater than 18 years old.
+
+[Screenshots]
+
+### User alert messages.
+
+* Users will be shown alerts on the top of the page below the nav bar when completing certain actions on the site. The alerts are as follows:
+
+* If username is already in use alert user.
+
+[Screenshots]
+  
+* When users signs up alert user.
+
+[Screenshots]
+
+* When user signs in alert user.
+
+[Screenshots]
+
+* If recipe name already in user alert user.
+
+[Screenshots]
+
+* If recipe is submitted alert user.
+
+[Screenshots]
+
+* If recipe is edited alert user.
+
+[Screenshots]
+
+* If recipe is deleted alert user.
+
+[Screenshots]
+
+* If recipe is added to favourites alert user.
+
+[Screenshots]
+
+* If recipe is removed from favourites alert user.
+
+[Screenshots]
