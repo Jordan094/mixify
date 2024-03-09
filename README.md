@@ -36,8 +36,8 @@
     * [View recipe page:](#view-recipe-page)
     * [My Favourites page:](#my-favourites-page)
   * [Features](#features)
-    + [Under 18 sign up prevention.](#under-18-sign-up-prevention)
-    + [User alert messages.](#user-alert-messages)
+    * [Under 18 sign up prevention.](#under-18-sign-up-prevention)
+    * [User alert messages.](#user-alert-messages)
 
 # **User Experience**
 
