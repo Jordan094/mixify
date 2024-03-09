@@ -35,7 +35,7 @@
    * [Edit Recipe Page:](#edit-recipe-page)
    * [View recipe page:](#view-recipe-page)
    * [My Favourites page:](#my-favourites-page)
-  - [**Features**](#features)
+- [**Features**](#features)
    * [Under 18 sign up prevention.](#under-18-sign-up-prevention)
    * [User alert messages.](#user-alert-messages)
 
