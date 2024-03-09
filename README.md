@@ -96,7 +96,7 @@
 
 ## Typography
 
-I have chosen the Fira-Sans Font. This is provided by Google Fonts and [can be found here.](https://fonts.google.com/specimen/Outfit)
+I have chosen the Outfit Font. This is provided by Google Fonts and [can be found here.](https://fonts.google.com/specimen/Outfit)
 
 I have used the regular font weight for standard text and chosen a weight of 600 when adding emphasis such as on the heading and title text.
 
@@ -230,7 +230,7 @@ This is the page where the user will create an account it is a simple form that 
 
 ### User alert messages.
 
-* Users will be shown alerts on the top of the page below the nav bar when completing certain actions on the site. The alerts are as follows:
+Users will be shown alerts on the top of the page below the nav bar when completing certain actions on the site. The alerts are as follows:
 
 * If username is already in use alert user.
 
@@ -267,3 +267,79 @@ This is the page where the user will create an account it is a simple form that 
 * If recipe is removed from favourites alert user.
 
 [Screenshots]
+
+# **Design Justifications**
+
+__Single Image on Homepage__
+
+My whole site only contains 1 image and that is on the homepage. This is part of the background. I did not want to have different images of cocktails all over the website as thier would be a clash of colours.
+Also, I only know at this time on how to add an image to a database via a URL and how to retrieve that URL. I decided that if users were to look for an image of a cocktails they would end up on another cocktail site to find one, potentially driving users away.
+
+__Recipe Description Minimum Character Limit__
+
+I believe users should give as much details as possible when adding a recipe to the site. I did not want users to be able to submit 1 word descriptions such as "Nice" or "Fruity"
+
+__Restricted Editing__
+
+I decided to only allow users to edit and delete thier own recipes. I feel that allowing only the creator to edit or delete their content enhances user privacy and security, and users feel more confident knowing that they have control over their own contributions and can manage them according to their preferences.
+
+# **Future Developments**
+
+There are a number of features I would like to add in the future to my website, the features are as follows:
+
+* I want to allow users to submit their own image files.
+* I want to allow users to rate other peoples cocktails out of 10.
+* I want to allow users to comment on submitted recipes.
+* I want to allow users to suggest edits.
+
+# **Functions Explained**
+
+The following section will explain in detail how each function works.
+
+[PlaceHolder]
+
+
+# **Technologies Used**
+
+* [HTML5](https://www.w3schools.com/html/html_intro.asp)
+  * HTML was used to create my website
+* [Heroku](https://id.heroku.com/login)
+  * Heroku is the deployment source I used for this project.
+* [Flask](https://flask.palletsprojects.com/en/2.2.x/)
+  * Templating Language
+* [MaterialiseCSS](https://materializecss.com/)
+  * UI component library that is created with HTML, CSS, and Javascript
+* [ElephantSQL](https://www.elephantsql.com/)
+  * ElephantSQL installs and manages PostgreSQL databases
+* [CSS3](https://www.w3schools.com/css/css_intro.asp)
+  * CSS was used to style my website
+* [Javascript](https://en.wikipedia.org/wiki/JavaScript)
+  * Javascript was used to add functionality to my website
+* [GitHub](https://github.com/)
+  * I used github to create my repository and store my projects code.
+* [Code Anywhere](https://app.codeanywhere.com/)
+  * I used Code Anywhere as my IDE
+* [Chrome](https://www.google.com/intl/en_uk/chrome/)
+  * I tested my website and responsiveness throught creation using chrome developer tools.
+* [Balsamiq](https://balsamiq.com/)
+  * Balsamiq was used to create the wireframes during the design process.
+* [Google Fonts](https://fonts.google.com/)
+  * I used the font Outfit which is a Google font, with a fallback font of Sans-Serif thoughout my whole project.
+* [Am I Responsive?](https://ui.dev/amiresponsive)
+  * This was used to test the responsiveness on all devices once the pages were complete.
+* [W3 Schools HTML Validation Service](https://validator.w3.org/)
+  * This was used to check for any HTML errors in the code.
+* [W3 Schools CSS Validation Service](https://jigsaw.w3.org/css-validator/)
+  * This was used to check for any HTML errors in the code.
+
+
+# **Accessibility**
+
+I wanted to ensure that the website was fully accessible. I have done this by doing the following:
+
+* Providing Alternative Text (Alt Text)
+  * I've made sure to add descriptive alternative text (alt text) to all images on the website. Alt text adds context to images, enabling users who rely on screen readers to understand the visual content even if they can't see it.
+* Ensuring Color Contrast
+  * I've chosen color combinations that maintain accessible contrast ratios, ensuring that text remains readable against different background colors. This benefits users with visual impairments or color blindness.
+* Responsive Design
+  * The site is designed to adapt to various devices and screen sizes. This caters to users who rely on different devices or have specific accessibility requirements.
