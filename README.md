@@ -303,6 +303,8 @@ The following section will explain in detail how each function works.
 
 * [HTML5](https://www.w3schools.com/html/html_intro.asp)
   * HTML was used to create my website
+* [Python](https://www.python.org/)
+  * Used for my websites core functionality
 * [Heroku](https://id.heroku.com/login)
   * Heroku is the deployment source I used for this project.
 * [Flask](https://flask.palletsprojects.com/en/2.2.x/)
