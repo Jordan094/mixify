@@ -133,11 +133,11 @@ There is also a navbar and footer which is present on all pages.
 [Screenshots]
 
 * Signup page: This is the page where the user will create an account it is a simple form that requires the user to enter the following information.
-** Username
-** First Name
-** Last Name
-** Date of Birth
-** Password
+  * Username
+  * First Name
+  * Last Name
+  * Date of Birth
+  * Password
 
 * All of the fields are requiured to be completed by the user to sign up and this has been re-iterated with a message saying "* Indicates required!" at the bottom of the signup page before the sign up button.
 * The website also requires the user to be at least 18 or over to join the site and there is a Javascript function in place that checks this to prevent under 18s signing up.
@@ -146,3 +146,39 @@ There is also a navbar and footer which is present on all pages.
 [Screenshots]
 
 * Login page: This page is simple and contains little information. There is 2 input boxes. One for the username, the other for the password. There is an Enter button underneath that, if the correct information is input, the user will be logged in to thier account. There is also a message at the bottom saying "Not yet registered? Sign up here." which a link that will take them to the sign up page if they havent signed up yet. Once a user is logged into their account they will be directed to the All Recipes page and a message will flash up to the user stating "You are logged in as: (Username)" At this point, the navbar will also update to remove the signup and login links and now show the All Recipes, My Recipes, Add Recipe, My Favourite and Logout Links.
+
+[Screenshots]
+
+* All Recipes Page: This page shows the user previews of all the recipes that have been submitted in a card format. The user is shown the title of the recipe, a brief description and underneath a view icon which when clicks displays the full recipe to the user. I have chosen to only display a set character limit on the description to ensure all of the cards are the same size. I have also added a see more button at the end of the description if the user wants to click that button instead. The cards are responsive to the device being used at the time. For example there is 3 cards horizontally on desktop devices and 1 card shown horizontally on mobile devices.
+
+[Screenshots]
+
+* My Recipes Page: This page shows the user previews of all the recipes that  that have been submitted by that user only in a card format. The user is shown the title of the recipe, a brief description and underneath the same as the all recipes page. However, the user is now shown 2 extra buttons, a edit button and a delete button. They will take the user to the edit recipe page and the delete recipe page. The page also displays all of the information to the user in the same way as the all recipes page to help with the consistency of the site.
+
+[Screenshots]
+
+* Add Recipe Page: This page contains a form similiar to the sign up page. The form has 4 boxes for the user to submit information.
+  * Recipe title
+  * Recipe Description (A minimum of 70 characters is required.)
+  * Recipe Ingredients
+  * Recipe Instructions
+ 
+* At the bottom of the form is the add recipe button. Once pressed the recipe will be stored to the database with all of the information completed. A recipe ID will be given and also the name of the user signed in will be stored so the My Recipes page will function correctly.
+
+[Screenshots]
+
+* Edit Recipe Page: This page contains the same form as the above Add Recipe page, however the website will only let you edit the recipe if the username of the current user matches that of the user that submitted the recipe.
+* The form will already be pre-populated with all of the infomation that had been previously submiited so that the user will not have to re-enter any information, only edit what is needed at the time.
+
+[Screenshots]
+
+* View recipe page: The user can view the full recipe page by clicking on either the see more button on the recipe card or at the bottom of the card clicking on the view icon. These buttons are present on the following pages. All recipes, My recipes and Favourite recipes. When viewing the full recipe the user is shown the title of the recipe at the top of the page just below the nav bar and then a content box showing the following.
+
+  * Full recipe description.
+  * All of the ingredients needed.
+  * Intructions on how to make.
+  * Name of user who has submitted the recipe.
+  * 4 buttons at the bottom. FAVOURITE, UNFAVOURITE, EDIT and DELETE
+
+* All of the above buttons will allow the user to complete their respective functions. As previously mentioned, the edit button will only work if the current user matches the user who submitted the recipe.
+* The delete button works slightly different as it works if the current user matches the user who submitted the recipe and also will work if the username is Admin. An account that I have created to remove any content that may be submitted which is not suitable.
