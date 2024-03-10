@@ -320,7 +320,7 @@ __Add recipe form__
 
 __Edit recipe form__
 
-![Edit Recipe](mixify/images/readme/recipe-edit.png)
+![Edit Recipe](mixify/images/readme/edit-form.png)
 
 ### View recipe page
 
