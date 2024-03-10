@@ -519,7 +519,45 @@ There are a number of features I would like to add in the future to my website, 
 
 ## Validation and Tools
 
-[Placeholder]
+### W3C Validation Tools
+
+Once my pages were complete I used [W3C Markup Validation Service](https://validator.w3.org/) to ensure my code had no errors.
+
+No errors are present throughout the whole site.
+
+I also used [W3C CSS Validation](https://jigsaw.w3.org/css-validator/) to ensure my code has no CSS errors. This came back as a pass, However there are a number of errors with the fontawesome and materialise which are unavoidable.
+
+Lastly I used [JSHint](https://jshint.com/) to validate my JavaScript.
+
+There were no errors found. There was 1 warning to say I had an unused variable but this will be used in future interations of this site.
+
+### Responsiveness Testing
+
+I used [Am I Responsive?](https://ui.dev/amiresponsive) to ensure my page displayed correctly on all devices. The screenshots are above each pages section
+
+# Credits
+
+## Code
+
+* [Code Institute's Level 5 in Web Application Development course](https://codeinstitute.net/) for providing me lessons and source code which has helped to create my website.
+
+* [MaterializeCSS](https://materializecss.com/) for providing templates to build my site with ease.
+
+* [Heroku](https://id.heroku.com/login) Heroku is the deployment source I used for this project.
+  
+* [Flask](https://flask.palletsprojects.com/en/2.2.x/) Templating Language.
+
+* [ElephantSQL](https://www.elephantsql.com/) for providing me with database hosting and management.
+
+* [W3Schools](https://www.w3schools.com/) for providing examples of code for further customisation of my site and quick help for HTML elements.
+
+* [Fontawesome](https://fontawesome.com/) for providing me with icons which I have used ony my footer.
+
+* [Mozilla MDN Javascript Developer Docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript) for guidance with my Javascript Age Validation.
+
+## Imagery
+
+* [VectorStock](https://www.vectorstock.com/) for the hero image.
 
 # Acknowledgements
 
