@@ -136,7 +136,7 @@ Here are all of the wireframes designed for this page broken down into device le
 
 * View Recipes Page
 
-* Delete Recipes Page
+* Edit Recipes Page
 
 * 404 Page
 
