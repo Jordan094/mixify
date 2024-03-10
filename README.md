@@ -222,89 +222,104 @@ This is the page where the user will create an account it is a simple form that 
 
 ## Features
 
-### Under 18 sign up prevention.
+### Responsive Navbar
+
+My Navbar has been desgined to be responsive in a number of ways. It responds to the device in which it is being used and also the options displayed to the user are different if they are logged in or out.
+
+__Desktop logged out Nav bar__
+![Desktop Logged Out](mixify/images/readme/nav-desktop-signedout.png)
+
+__Desktop logged in Nav bar__
+![Desktop Logged In](mixify/images/readme/nav-desktop-signedin.png)
+
+__Mobile Nav bar__
+![Mobile Nav ba](mixify/images/readme/nav-mobile.png)
+
+__Mobile Expanded Nav bar Signed Out__
+![Mobile Expanded Nav bar Signed Out](mixify/images/readme/nav-mobile-signedout.png)
+
+__Mobile Expanded Nav bar Signed In__
+![Mobile Expanded Nav bar Signed In](mixify/images/readme/nav-mobile-signedin.png)
+
+### Date of birth Verification.
 
 * When a user completes the sign up form if they have input a date of birth that would make them under the age of 18 a Javascript alert will pop up stating "You must be 18 or older to sign up." They will be unable to create an account if the date of birth is not equal to or greater than 18 years old.
 
-[Screenshots]
+![dob-veri](mixify/images/readme/dob-verifacation.png)
 
 ### Accidental deletion prevention.
 
 * When a user attempts to delete a recipe they will recive a Javascript alert asking them if they are sure they want to delete. They can press cancel to stop or ok to continue.
 
-[Screenshots]
+![delete-veri](mixify/images/readme/deletion-prevention.png)
 
 ### User flash messages.
 
 Users will be shown alerts on the top of the page below the nav bar when completing certain actions on the site. The alerts are as follows:
 
-* If username is already in use alert user.
+__If username is already in use alert user__
 
-[Screenshots]
+![User-inuse](mixify/images/readme/username-inuse.png)
   
-* When users signs up alert user.
+__When users signs up alert user__
 
-[Screenshots]
+![User-signup](mixify/images/readme/signup-complete.png)
 
-* When user signs in alert user.
+__When user signs in alert user__
 
-[Screenshots]
+![User-signin](mixify/images/readme/signup-complete.png)
 
-* If recipe name already in user alert user.
+__If recipe is edited alert user__
 
-[Screenshots]
+![recipe-edit](mixify/images/readme/recipe-edit.png)
 
-* If recipe is submitted alert user.
+__If recipe is deleted alert user__
 
-[Screenshots]
+![recipe-delete](mixify/images/readme/recipe-delete.png)
 
-* If recipe is edited alert user.
+__If recipe is added to favourites alert user__
 
-[Screenshots]
+![recipe-favourite](mixify/images/readme/recipe-favourite.png)
 
-* If recipe is deleted alert user.
+__If recipe is removed from favourites alert user__
 
-[Screenshots]
-
-* If recipe is added to favourites alert user.
-
-[Screenshots]
-
-* If recipe is removed from favourites alert user.
-
-[Screenshots]
+![recipe-unfavourite](mixify/images/readme/recipe-unfavourite.png)
 
 ### Cards
 
 Recipes are previewed to users in a materialise card. They take the user to the full recipe when clicked on.
 
-* My Recipes Cards.
+__My Recipes Cards__
 
-[Screenshots]
+![my_recipe_card](mixify/images/readme/myrecipe-card.png)
 
-* Other Cards.
+__Other Cards (All recipes, favourite recipes pages)__
 
-[Screenshots]
+![all_recipe_card](mixify/images/readme/recipe-card.png)
 
 ### Form Submissions
 
 There is a number of forms that users will complete during their time browsing the site. They are as follows:
 
-* Sign up form
+__Sign up form__
 
-[Screenshots]
+![Sign up](mixify/images/readme/sign-up.png)
 
-* Login form
+__Login form__
 
-[Screenshots]
+![Login Form](mixify/images/readme/login-form.png)
 
-* Add recipe form
+__Add recipe form__
 
-[Screenshots]
+![Add recipe](mixify/images/readme/add-form.png)
 
-* Edit recipe form
+__Edit recipe form__
 
-[Screenshots]
+![Edit Recipe](mixify/images/readme/recipe-edit.png)
+
+### View recipe page
+
+![View Recipe](mixify/images/readme/view-recipe.png)
 
 # **Design Justifications**
 
@@ -330,6 +345,7 @@ The following section will explain in detail how each function works.
 
 # Database and CRUD Design
 
+[PlaceHolder]
 
 # Deployment & Local Development
 
@@ -376,7 +392,6 @@ The models.py file contains the database structure and tables. I have used Eleph
 4. View the full Instance list and click into mixify
 5. You will be shown a URL. Copy this URL for use in heroku
 
-
 #### Heroku
 
 1. Sign up to [Heroku](https://dashboard.heroku.com/)
@@ -404,7 +419,6 @@ DO NOT SHARE YOUR SECRET KEY WITH ANYONE
 13. Type exit() and close the console
 14. Scroll back to the bottom and click Deploy. The live Heroku project will then open in a new tab.
 
-
 # **Accessibility**
 
 I wanted to ensure that the website was fully accessible. I have done this by doing the following:
@@ -418,7 +432,11 @@ I wanted to ensure that the website was fully accessible. I have done this by do
 
 # Testing
 
+[PlaceHolder]
+
 # User Feedback
+
+[PlaceHolder]
 
 # **Future Developments**
 
@@ -466,4 +484,8 @@ There are a number of features I would like to add in the future to my website, 
 
 # Credits
 
+[PlaceHolder]
+
 # Acknowledgements
+
+[PlaceHolder]
