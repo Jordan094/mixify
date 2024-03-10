@@ -505,8 +505,8 @@ There are a number of features I would like to add in the future to my website, 
 
 * Thank you to Pasquale Fasulo for my tutoring sessions and [Manuel Perez Romero](https://github.com/Manuperezro) for my one to one sessions.
 
-* Thank you to Thomas Farrel for providing invaluable in depth user testing feedback as a qualified software tester.
+* Thank you to Thomas Farrell for providing invaluable in depth user testing feedback as a qualified software tester.
 
 * Thank you to [Daniel Matthews](https://github.com/Dan-Matthews-23) for support offered and also for testing.
 
-* * Thank you to Levi Webb for providing android testing and laptop testing.
+* Thank you to Levi Webb for providing android testing and laptop testing.
