@@ -198,7 +198,7 @@ This is the page where the user will create an account it is a simple form that 
 * This page contains the same form as the above Add Recipe page, however the website will only let you edit the recipe if the username of the current user matches that of the user that submitted the recipe.
 * The form will already be pre-populated with all of the infomation that had been previously submiited so that the user will not have to re-enter any information, only edit what is needed at the time.
 
-![Edit](mixify/images/readme/responsive-editrecipes.png)
+![Edit](mixify/images/readme/responsive-editrecipe.png)
 
 ### View recipe page:
 * The user can view the full recipe page by clicking on either the see more button on the recipe card or at the bottom of the card clicking on the view icon. These buttons are present on the following pages. All recipes, My recipes and Favourite recipes. When viewing the full recipe the user is shown the title of the recipe at the top of the page just below the nav bar and then a content box showing the following.
