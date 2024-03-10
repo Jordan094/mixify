@@ -16,7 +16,7 @@ main {
 }
 
 /* Styling for the home card */
-#home-card {
+#home-card, home-card1, home-card2 {
   margin-left: 10px; /* Setting margin for the home card */
 }
 
