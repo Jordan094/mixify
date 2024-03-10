@@ -436,7 +436,13 @@ I wanted to ensure that the website was fully accessible. I have done this by do
 
 # User Feedback
 
-[PlaceHolder]
+After I deployed my website I sent it to a number of peers to test and provide me with feedback. Here is a number of changes that I have made due to user feedback.
+
+* On the signup page it was suggested to let the user know that the fields are required. Changes have been made based on this feedback.
+
+* On the signup page it was suggest to let the user know what is required when entering a password e.g. Minimum of 8 characters. Changes have been made based on this feedback.
+
+* On the footer page the links were not re-driecting the user to the intended site. This has now been fixed.
 
 # **Future Developments**
 
