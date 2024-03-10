@@ -181,7 +181,7 @@ This is the page where the user will create an account it is a simple form that 
 ### My Recipes Page:
 * This page shows the user previews of all the recipes that have been submitted by that user only in a card format. The user is shown the title of the recipe, a brief description and underneath the same as the all recipes page. However, the user is now shown 2 extra buttons, a edit button and a delete button. They will take the user to the edit recipe page and the delete recipe page. The page also displays all of the information to the user in the same way as the all recipes page to help with the consistency of the site.
 
-[Screenshots]
+![myrecipes](mixify/images/readme/responsive-myrecipes.png)
 
 ### Add Recipe Page:
 * This page contains a form similiar to the sign up page. The form has 4 boxes for the user to submit information.
@@ -198,7 +198,7 @@ This is the page where the user will create an account it is a simple form that 
 * This page contains the same form as the above Add Recipe page, however the website will only let you edit the recipe if the username of the current user matches that of the user that submitted the recipe.
 * The form will already be pre-populated with all of the infomation that had been previously submiited so that the user will not have to re-enter any information, only edit what is needed at the time.
 
-[Screenshots]
+![Edit](mixify/images/readme/responsive-editrecipes.png)
 
 ### View recipe page:
 * The user can view the full recipe page by clicking on either the see more button on the recipe card or at the bottom of the card clicking on the view icon. These buttons are present on the following pages. All recipes, My recipes and Favourite recipes. When viewing the full recipe the user is shown the title of the recipe at the top of the page just below the nav bar and then a content box showing the following.
@@ -213,12 +213,12 @@ This is the page where the user will create an account it is a simple form that 
 * The delete button works slightly different as it works if the current user matches the user who submitted the recipe and also will work if the username is Admin. An account that I have created to remove any content that may be submitted which is not suitable.
 * When the favourite button is pressed the user will be given the message "Recipe added to favorites successfully." the user will then be directed to the My Favourites page.
 
-[Screenshots]
+![View](mixify/images/readme/responsive-viewrecipe.png)
 
 ### My Favourites page:
 * This user is almost a mirror image of the my recipes page. This page shows the user previews of all the recipes that have been favourited by that user only in a card format. Unlike the my recipes page, the user is only able to view the main recipe they are unable to see the buttons for edit and delete. If a user removes a recipe from their favourites it will no longer display on this page.
 
-[Screenshots]
+![Favourite](mixify/images/readme/responsive-favourites.png)
 
 ## Features
 
