@@ -228,7 +228,13 @@ This is the page where the user will create an account it is a simple form that 
 
 [Screenshots]
 
-### User alert messages.
+### Accidental deletion prevention.
+
+* When a user attempts to delete a recipe they will recive a Javascript alert asking them if they are sure they want to delete. They can press cancel to stop or ok to continue.
+
+[Screenshots]
+
+### User flash messages.
 
 Users will be shown alerts on the top of the page below the nav bar when completing certain actions on the site. The alerts are as follows:
 
@@ -377,3 +383,48 @@ I wanted to ensure that the website was fully accessible. I have done this by do
   * I've chosen color combinations that maintain accessible contrast ratios, ensuring that text remains readable against different background colors. This benefits users with visual impairments or color blindness.
 * Responsive Design
   * The site is designed to adapt to various devices and screen sizes. This caters to users who rely on different devices or have specific accessibility requirements.
+
+# Deployment & Local Development
+
+## Deployment
+
+The Local Legends project was made live through GitHub. This is how to deploy:
+
+1. Log in (or sign up) to GitHub.
+2. Find the repository for this project, Jordan094/.
+3. Click on the Settings link.
+4. Click on the Pages link in the left-hand side navigation bar.
+5. In the Source section, choose main from the drop-down select branch menu. Select Root from the drop-down select folder menu.
+6. Click Save. Your live GitHub Pages site is now deployed at the URL shown.
+
+## Local Development
+
+### How to Fork
+
+To fork the mixify repository:
+
+1. Log in to your GitHub account or sign up if you don't have one.
+2. Visit the repository at Jordan094/mixify.
+3. Click the "Fork" button located at the top right corner.
+
+### How to Clone
+
+To clone the mixify repository:
+
+1. Log in to your GitHub account or sign up if you don't have one..
+2. Go to the repository for this project, Jordan094/mixify.
+3. Click on the code button, select whether you would like to clone with HTTPS, SSH or GitHub CLI and copy the link shown.
+4. Open the terminal in your code editor and change the current working directory to the location you want to use for the cloned directory.
+5. Type 'git clone' into the terminal and then paste the link you copied in step 3. Press enter.
+
+### How to deploy
+
+The models.py file contains the database structure and tables. I have used Elephant SQL to store the database by doing the following:
+
+#### Elephant SQL
+
+1. Sign up with [Elephant SQL](https://www.elephantsql.com/)
+2. Log in to your account
+3. Click Create Instance, e.g. mixify
+4. View the full Instance list and click into mixify
+5. You will be shown a URL. Copy this URL for use in heroku
