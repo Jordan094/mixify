@@ -120,25 +120,25 @@ I have used fontawesome icons for the external link icons where are present in t
 
 Here are all of the wireframes designed for this page broken down into device level. I desgined these wireframes with mobile first in mind and due to the nature of the site and the size of the content there was no changes needed to be made in terms of content displayed so I have combined my mobile and tablet wireframes into one.
 
-[Homepage Wireframes](mixify/images/readme/Index Page.png)
+[Homepage Wireframes](mixify/images/readme/Index%20Page.png)
 
-* Signup Page
+[Sign Up Page Wireframes](mixify/images/readme/Sign%20Up.png)
 
-* Login Page
+[Log In Page Wireframes](mixify/images/readme/Log%20In.png)
 
-* All Recipes Page
+[All Recipes Page Wireframes](mixify/images/readme/All%20Recipes.png)
 
-* My Recipes Page
+[My Recipes Page Wireframes](mixify/images/readme/My%20Recipes.png)
 
-* Favourite Recipes Page
+[Favourites Page Wireframes](mixify/images/readme/Favourite%20Recipes.png)
 
-* Add Recipes Page
+[Add Recipe Page Wireframes](mixify/images/readme/Add%20Recipe.png)
 
-* View Recipes Page
+[Edit Recipe Page Wireframes](mixify/images/readme/Edit%20Recipe.png)
 
-* Edit Recipes Page
+[View Recipe Page Wireframes](mixify/images/readme/View%20Recipe.png)
 
-* 404 Page
+[404 Page Wireframes](mixify/images/readme/404%20Page.png)
 
 ## Website Layout
 
