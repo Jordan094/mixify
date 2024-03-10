@@ -227,18 +227,23 @@ This is the page where the user will create an account it is a simple form that 
 My Navbar has been desgined to be responsive in a number of ways. It responds to the device in which it is being used and also the options displayed to the user are different if they are logged in or out.
 
 __Desktop logged out Nav bar__
+
 ![Desktop Logged Out](mixify/images/readme/nav-desktop-signedout.png)
 
 __Desktop logged in Nav bar__
+
 ![Desktop Logged In](mixify/images/readme/nav-desktop-signedin.png)
 
 __Mobile Nav bar__
+
 ![Mobile Nav ba](mixify/images/readme/nav-mobile.png)
 
 __Mobile Expanded Nav bar Signed Out__
+
 ![Mobile Expanded Nav bar Signed Out](mixify/images/readme/nav-mobile-signedout.png)
 
 __Mobile Expanded Nav bar Signed In__
+
 ![Mobile Expanded Nav bar Signed In](mixify/images/readme/nav-mobile-signedin.png)
 
 ### Date of birth Verification.
