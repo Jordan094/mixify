@@ -493,10 +493,20 @@ There are a number of features I would like to add in the future to my website, 
 * [W3 Schools CSS Validation Service](https://jigsaw.w3.org/css-validator/)
   * This was used to check for any HTML errors in the code.
 
-# Credits
+## Validation and Tools
 
-[PlaceHolder]
+[Placeholder]
 
 # Acknowledgements
 
-[PlaceHolder]
+* Thank you to [Code Institute](https://codeinstitute.net/) staff for providing me lessons.
+  
+* Thank you to [City of Bristol College](https://www.cityofbristol.ac.uk/) for facilitating my learning.
+
+* Thank you to Pasquale Fasulo for my tutoring sessions and [Manuel Perez Romero](https://github.com/Manuperezro) for my one to one sessions.
+
+* Thank you to Thomas Farrel for providing invaluable in depth user testing feedback as a qualified software tester.
+
+* Thank you to [Daniel Matthews](https://github.com/Dan-Matthews-23) for support offered and also for testing.
+
+* * Thank you to Levi Webb for providing android testing and laptop testing.
