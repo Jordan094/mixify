@@ -348,9 +348,9 @@ The following section will explain in detail how each function works.
 
 [PlaceHolder]
 
-# Database and CRUD Design
+# Data Model
 
-[PlaceHolder]
+[View my Database structure in PDF form here](mixify/images/database-schema.pdf)
 
 # Deployment & Local Development
 
