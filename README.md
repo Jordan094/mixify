@@ -268,6 +268,38 @@ Users will be shown alerts on the top of the page below the nav bar when complet
 
 [Screenshots]
 
+### Cards
+
+Recipes are previewed to users in a materialise card. They take the user to the full recipe when clicked on.
+
+* My Recipes Cards.
+
+[Screenshots]
+
+* Other Cards.
+
+[Screenshots]
+
+### Form Submissions
+
+There is a number of forms that users will complete during their time browsing the site. They are as follows:
+
+* Sign up form
+
+[Screenshots]
+
+* Login form
+
+[Screenshots]
+
+* Add recipe form
+
+[Screenshots]
+
+* Edit recipe form
+
+[Screenshots]
+
 # **Design Justifications**
 
 __Single Image on Homepage__
