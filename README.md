@@ -346,7 +346,31 @@ I decided to only allow users to edit and delete thier own recipes. I feel that 
 
 The following section will explain in detail how each function works.
 
-[PlaceHolder]
+## Python Functions
+
+|      Function   |   Explanation    |
+| ------------    | ------------     |
+|  def home():   | This function directs the user to index.html.  |
+|  def recipes():   |  This function directs the user to the All Recipes page and queries the database for all recipes and returns the results to the user.  |
+|  def add_recipe():   |  This function directs the user to the Add Recipes page, it also once the form has been completed and submitted will commit all of the information to the database including recipe name, description, ingredients and method. The submitters username will also be stored in the database for usage on the My recipes page.  |
+|  def my_recipes():   | This function directs the user to the My Recipes page. It also Queries the database for all recipes submitted by that users and displays them to the user.  |
+|  def view_recipe(recipe_id):   | When a recipe card is pressed. That recipes page will be loaded. The full recipe is then shown to the user.  |
+|  def delete_recipe(recipe_id)   | This function deletes the selected recipe from the database. However a check will be made to ensure that the user logged in matches the user who submitted the recipe before deleting.  |
+|  def edit_recipe(recipe_id):   | This function edits the selected recipe. However a check will be made to ensure that the user logged in matches the user who submitted the recipe before editing.  |
+|  def signup():   | This function directs the user to signup.html.  |
+|  def register():   | Once the signup form has been completed and submitted. An account will be created for the user and stored on the database.  |
+|  def login():   | This function directs the user to login.html  |
+|  def sitelogin():   | Once a username and password is entered, the site will attempt to log the user in. If the username and password matches they will be successful and log in. If not they will recieve an error message.  |
+|  def logout():   | This function logs the user out of their session.  |
+|  def my_favourites():   | This function loads up the My Favourites page. This it queries the database for the current users favourites and displays them all on the page.  |
+|  def add_to_favorites(recipe_id):   | When the add to favouites button is pressed this function will update the favourites model in the database and add another favourite to that users ID.  |
+|  def remove_from_favorites(recipe_id):   | When the remove from favouites button is pressed this function will update the favourites model in the database and remove the item from that users ID.  |
+
+## Javascript Functions
+
+|      Function   |   Explanation    |
+| ------------    | ------------     |
+|  function validateAge()   | This function checks the age of a user when they are creating an account. If the ages is less than 18 years old an alert will display presenting the user from signing up. |
 
 # Data Model
 
