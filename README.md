@@ -321,14 +321,6 @@ __Restricted Editing__
 
 I decided to only allow users to edit and delete thier own recipes. I feel that allowing only the creator to edit or delete their content enhances user privacy and security, and users feel more confident knowing that they have control over their own contributions and can manage them according to their preferences.
 
-# **Future Developments**
-
-There are a number of features I would like to add in the future to my website, the features are as follows:
-
-* I want to allow users to submit their own image files.
-* I want to allow users to rate other peoples cocktails out of 10.
-* I want to allow users to comment on submitted recipes.
-* I want to allow users to suggest edits.
 
 # **Functions Explained**
 
@@ -336,53 +328,8 @@ The following section will explain in detail how each function works.
 
 [PlaceHolder]
 
+# Database and CRUD Design
 
-# **Technologies Used**
-
-* [HTML5](https://www.w3schools.com/html/html_intro.asp)
-  * HTML was used to create my website
-* [Python](https://www.python.org/)
-  * Used for my websites core functionality
-* [Heroku](https://id.heroku.com/login)
-  * Heroku is the deployment source I used for this project.
-* [Flask](https://flask.palletsprojects.com/en/2.2.x/)
-  * Templating Language
-* [MaterialiseCSS](https://materializecss.com/)
-  * UI component library that is created with HTML, CSS, and Javascript
-* [ElephantSQL](https://www.elephantsql.com/)
-  * ElephantSQL installs and manages PostgreSQL databases
-* [CSS3](https://www.w3schools.com/css/css_intro.asp)
-  * CSS was used to style my website
-* [Javascript](https://en.wikipedia.org/wiki/JavaScript)
-  * Javascript was used to add functionality to my website
-* [GitHub](https://github.com/)
-  * I used github to create my repository and store my projects code.
-* [Code Anywhere](https://app.codeanywhere.com/)
-  * I used Code Anywhere as my IDE
-* [Chrome](https://www.google.com/intl/en_uk/chrome/)
-  * I tested my website and responsiveness throught creation using chrome developer tools.
-* [Balsamiq](https://balsamiq.com/)
-  * Balsamiq was used to create the wireframes during the design process.
-* [Google Fonts](https://fonts.google.com/)
-  * I used the font Outfit which is a Google font, with a fallback font of Sans-Serif thoughout my whole project.
-* [Am I Responsive?](https://ui.dev/amiresponsive)
-  * This was used to test the responsiveness on all devices once the pages were complete.
-* [W3 Schools HTML Validation Service](https://validator.w3.org/)
-  * This was used to check for any HTML errors in the code.
-* [W3 Schools CSS Validation Service](https://jigsaw.w3.org/css-validator/)
-  * This was used to check for any HTML errors in the code.
-
-
-# **Accessibility**
-
-I wanted to ensure that the website was fully accessible. I have done this by doing the following:
-
-* Providing Alternative Text (Alt Text)
-  * I've made sure to add descriptive alternative text (alt text) to all images on the website. Alt text adds context to images, enabling users who rely on screen readers to understand the visual content even if they can't see it.
-* Ensuring Color Contrast
-  * I've chosen color combinations that maintain accessible contrast ratios, ensuring that text remains readable against different background colors. This benefits users with visual impairments or color blindness.
-* Responsive Design
-  * The site is designed to adapt to various devices and screen sizes. This caters to users who rely on different devices or have specific accessibility requirements.
 
 # Deployment & Local Development
 
@@ -423,8 +370,100 @@ The models.py file contains the database structure and tables. I have used Eleph
 
 #### Elephant SQL
 
-1. Sign up with [Elephant SQL](https://www.elephantsql.com/)
+1. Sign up to [Elephant SQL](https://www.elephantsql.com/)
 2. Log in to your account
 3. Click Create Instance, e.g. mixify
 4. View the full Instance list and click into mixify
 5. You will be shown a URL. Copy this URL for use in heroku
+
+
+#### Heroku
+
+1. Sign up to [Heroku](https://dashboard.heroku.com/)
+2. Log in
+3. Click New, then Create New App. Give the name of mixify
+4. Click mixify
+5. Click Settings
+6. Click Reveal Config Bars
+7. Input the following:
+   *DATABASE_URL = Input the URL You copied from elephantSQL
+   * DEBUG = True
+   * IP = 0.0.0.0
+   * PORT = 5000
+   * SECRET_KEY = "Choose your own secret key"
+   * KEY = VALUE
+
+MAKE SURE YOU REMOVE DEBUG = TRUE BEFORE FINAL DEPLOYMENT
+DO NOT SHARE YOUR SECRET KEY WITH ANYONE
+
+8. Click Deploy
+9. Select Manual Deployment, then Deploy.
+10. Once complete. Select Run Console in the top right corner
+11. Enter Python then click Run
+12. Enter the following: "from mixify import app, db app.app_context().push() db.create_all()"
+13. Type exit() and close the console
+14. Scroll back to the bottom and click Deploy. The live Heroku project will then open in a new tab.
+
+
+# **Accessibility**
+
+I wanted to ensure that the website was fully accessible. I have done this by doing the following:
+
+* Providing Alternative Text (Alt Text)
+  * I've made sure to add descriptive alternative text (alt text) to all images on the website. Alt text adds context to images, enabling users who rely on screen readers to understand the visual content even if they can't see it.
+* Ensuring Color Contrast
+  * I've chosen color combinations that maintain accessible contrast ratios, ensuring that text remains readable against different background colors. This benefits users with visual impairments or color blindness.
+* Responsive Design
+  * The site is designed to adapt to various devices and screen sizes. This caters to users who rely on different devices or have specific accessibility requirements.
+
+# Testing
+
+# User Feedback
+
+# **Future Developments**
+
+There are a number of features I would like to add in the future to my website, the features are as follows:
+
+* I want to allow users to submit their own image files.
+* I want to allow users to rate other peoples cocktails out of 10.
+* I want to allow users to comment on submitted recipes.
+* I want to allow users to suggest edits.
+
+# **Technologies Used**
+
+* [HTML5](https://www.w3schools.com/html/html_intro.asp)
+  * HTML was used to create my website
+* [Python](https://www.python.org/)
+  * Used for my websites core functionality
+* [Heroku](https://id.heroku.com/login)
+  * Heroku is the deployment source I used for this project.
+* [Flask](https://flask.palletsprojects.com/en/2.2.x/)
+  * Templating Language
+* [MaterialiseCSS](https://materializecss.com/)
+  * UI component library that is created with HTML, CSS, and Javascript
+* [ElephantSQL](https://www.elephantsql.com/)
+  * ElephantSQL installs and manages PostgreSQL databases
+* [CSS3](https://www.w3schools.com/css/css_intro.asp)
+  * CSS was used to style my website
+* [Javascript](https://en.wikipedia.org/wiki/JavaScript)
+  * Javascript was used to add functionality to my website
+* [GitHub](https://github.com/)
+  * I used github to create my repository and store my projects code.
+* [Code Anywhere](https://app.codeanywhere.com/)
+  * I used Code Anywhere as my IDE
+* [Chrome](https://www.google.com/intl/en_uk/chrome/)
+  * I tested my website and responsiveness throught creation using chrome developer tools.
+* [Balsamiq](https://balsamiq.com/)
+  * Balsamiq was used to create the wireframes during the design process.
+* [Google Fonts](https://fonts.google.com/)
+  * I used the font Outfit which is a Google font, with a fallback font of Sans-Serif thoughout my whole project.
+* [Am I Responsive?](https://ui.dev/amiresponsive)
+  * This was used to test the responsiveness on all devices once the pages were complete.
+* [W3 Schools HTML Validation Service](https://validator.w3.org/)
+  * This was used to check for any HTML errors in the code.
+* [W3 Schools CSS Validation Service](https://jigsaw.w3.org/css-validator/)
+  * This was used to check for any HTML errors in the code.
+
+# Credits
+
+# Acknowledgements
