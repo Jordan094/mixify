@@ -120,7 +120,7 @@ I have used fontawesome icons for the external link icons where are present in t
 
 Here are all of the wireframes designed for this page broken down into device level. I desgined these wireframes with mobile first in mind and due to the nature of the site and the size of the content there was no changes needed to be made in terms of content displayed so I have combined my mobile and tablet wireframes into one.
 
-* Homepage
+[Homepage Wireframes](mixify/images/readme/Index Page.png)
 
 * Signup Page
 
