@@ -152,7 +152,7 @@ Although this page is not shown to the user it is one of the most important page
 ### Landing page (index.html):
 This is the page the user is shown upon first time access to the website. The Navbar is present at the top and also there is a title of the page with a small sentence detailing the site purpose, with a get started button which directs the user to the Signup Page if the user is not logged in and directs them to the my recipes page if they are. Underneath the Get Started button there are 3 cards. Displayed in a grid format which changes depending on what device it is viewed on that highlights some of the sites main features - Which are Contribute, Discover and Favourite. The cards also have MaterialiseCSS icons in each. The footer is also present.
 
-[Screenshots]
+![Homepage](mixify/images/readme/responsive-home.png)
 
 ### Signup page: 
 This is the page where the user will create an account it is a simple form that requires the user to enter the following information.
@@ -166,17 +166,17 @@ This is the page where the user will create an account it is a simple form that 
 * The website also requires the user to be at least 18 or over to join the site and there is a Javascript function in place that checks this to prevent under 18s signing up.
 * Once a user has signed up a message will flash stating "Signup complete - Thank you for joining Mixify!"
 
-[Screenshots]
+![Signup](mixify/images/readme/responsive-signup.png)
 
 ### Login page:
 * This page is simple and contains little information. There is 2 input boxes. One for the username, the other for the password. There is an Enter button underneath that, if the correct information is input, the user will be logged in to thier account. There is also a message at the bottom saying "Not yet registered? Sign up here." which a link that will take them to the sign up page if they havent signed up yet. Once a user is logged into their account they will be directed to the All Recipes page and a message will flash up to the user stating "You are logged in as: (Username)" At this point, the navbar will also update to remove the signup and login links and now show the All Recipes, My Recipes, Add Recipe, My Favourite and Logout Links.
 
-[Screenshots]
+![Login](mixify/images/readme/responsive-login.png)
 
 ### All Recipes Page:
 * This page shows the user previews of all the recipes that have been submitted in a card format. The user is shown the title of the recipe, a brief description and underneath a view icon which when clicks displays the full recipe to the user. I have chosen to only display a set character limit on the description to ensure all of the cards are the same size. I have also added a see more button at the end of the description if the user wants to click that button instead. The cards are responsive to the device being used at the time. For example there is 3 cards horizontally on desktop devices and 1 card shown horizontally on mobile devices.
 
-[Screenshots]
+![All](mixify/images/readme/responsive-allrecipes.png)
 
 ### My Recipes Page:
 * This page shows the user previews of all the recipes that have been submitted by that user only in a card format. The user is shown the title of the recipe, a brief description and underneath the same as the all recipes page. However, the user is now shown 2 extra buttons, a edit button and a delete button. They will take the user to the edit recipe page and the delete recipe page. The page also displays all of the information to the user in the same way as the all recipes page to help with the consistency of the site.
@@ -192,7 +192,7 @@ This is the page where the user will create an account it is a simple form that 
  
 * At the bottom of the form is the add recipe button. Once pressed the recipe will be stored to the database with all of the information completed. A recipe ID will be given and also the name of the user signed in will be stored so the My Recipes page will function correctly.
 
-[Screenshots]
+![Add](mixify/images/readme/responsive-addrecipe.png)
 
 ### Edit Recipe Page:
 * This page contains the same form as the above Add Recipe page, however the website will only let you edit the recipe if the username of the current user matches that of the user that submitted the recipe.
