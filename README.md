@@ -461,7 +461,97 @@ I wanted to ensure that the website was fully accessible. I have done this by do
 
 # Testing
 
-[PlaceHolder]
+I performed manual testing all through the creation of my website. I would test to ensure full functionaility is present across all devices before committing any changes.
+
+Below is an overview of my testing and tests were carried out on the following devices:
+
+* Samsung Galaxy S22 Ultra
+* iPhone 14
+* Samsung Galaxy Tab
+* ASUS Chromebook with 15.3" Screen
+* Windows 11 desktop computer with a 27" Monitor
+
+## Site Wide Testing
+
+### Background
+
+Expectation: Respond to device in which it is displayed on. Only show on index page. Result: Passed all tests.
+
+## Testing User Stories from User Experience (UX) Section
+
+### First Time User Goals
+
+**As a first-time user, I want to navigate the site with ease.**
+
+    - The website has been designed with a simplistic mobile first aproach which scales depending on the device it is being viewed on.
+    - The navigation bar will only allow users to visit sections of the site they have access to. If they are not logged in they can only access the sign up and sign in pages. If they are logged in they can view all of the different pages on offer to them such as add recipe, my recipes, view recipe.
+    - There is a footer at the bottom of the page containing external links.
+
+**As a first-time user, I want to be able to create a profile, sign up for an account and be able to log in to access the site.**
+
+    - The websites home page has a get started button which takes them to the sign up page.
+    - The website has a sign up page which allows the user to sign up for an account.
+    - Once an account has been created the user is re-directed to the login page and promtped to log in to thier account.
+
+**As a first-time user, I want to be able to view all cocktails which have been submitted to the website.**
+
+    - Once a user has logged in they are taken to the All Recipes page. On this page they are able to see preview cards of all recipes that have been submitted to the website by every user.
+    - Users can click on each recipe card and will be re-directed to that recipes full page which includes: Recipe Title, Recipe Description, Recipe Ingredients and Recipe Instructions.
+
+**As a first-time user, I want to be able to add cocktails I like to my favourites.**
+
+    - Once a user is viewing a full recipe page. One of the options at the bottom of the page is to add that recipe to thier favourites.
+    - Once pressed that recipe will be added and when they click the My Favourites page on the nav bar it will be displayed on that page.
+    - There is also an option to remove the recipe from their favourites also. If pressed it will be removed from the my favourites page.
+
+**As a first-time user, I want to be able to  submit new recipes.**
+
+    - Users who are logged in can select the add recipe page in the nav bar.
+    - When selected they are taken to a page call Add New Recipe. On this page their is a form to fill in with the following 4 information boxes: Recipe Title, Recipe Description (Minimum 70 Characters) Recipe Ingredients, Recipe Instructions. 
+    - Once complete. The user can press the submit button and the recipe will be submitted to the site.
+
+
+### Frequent User Goals
+
+**As a frequent user, I want to Log in to the account I have created.**
+
+    - Returning users can press the log in option on the nav bar when returing to the site.
+    - They will be able to input thier username and password and log in.
+    - Thier data will be remembered such as favourites and submitted recipes.
+
+**As a frequent user, I want to view reicpes that I have added to favourites previously.**
+
+    - Users can press on the my favourites opton on the nav bar
+    - When pressed the page will be loaded and show all the recipes that user has added to thier favourites.
+
+**As a frequent user, I want to view reicpes that I have submitted.**
+
+    - Users can click on the my recipes option on the nav bar.
+    - When pressed the page will be loaded and show all the recipes that user has submitted.
+
+**As a frequent user, I want to remove recipes from my favourites if desired.**
+
+    - Users can press on the my favourites opton on the nav bar
+    - Users can press on the recipe they want to remove from their favourites to view the full recipe.
+    - At the bottom of the page is a button to remove from favourites.
+
+**As a frequent user, I want to edit reicpes that I have submitted.**
+
+    - Users can click on the my recipes option on the nav bar.
+    - When pressed the page will be loaded and show all the recipes that user has submitted.
+    - In the preview card is an option to press on that will take the user to the edit recipe screen.
+    - Users can then edit the recipe and resubmit it.
+    - Users can also access this by viewing the full recipe and clicking on the option at the bottom of the page.
+    - Users can only edit recipes that they have submitted.
+
+**As a frequent user, I want to delete reicpes that I have submitted.**
+
+    - Users can click on the my recipes option on the nav bar.
+    - When pressed the page will be loaded and show all the recipes that user has submitted.
+    - In the preview card is an option to press on that will delete the recipe.
+    - The user will be promted to confirm they wish to delete the recipe.
+    - Users can also delete them by viewing the full recipe and clicking on the option at the     	   
+    - Users can only delete recipes that they have submitted.
 
 # User Feedback
 
