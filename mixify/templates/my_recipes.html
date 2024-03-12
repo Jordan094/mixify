@@ -12,7 +12,7 @@
                 <!--Card div to display recipe preview-->
                 <div class="card">
                     <div class="card-content">
-                        <span class="card-title center-align" style="font-weight: bold;">{{ recipe.title }}</span>
+                        <span class="card-title center-align" style="font-weight: bold;">{{ recipe.title | truncate(20) }}</span>
                         <hr>
                         {% if recipe.description | length > 75 %}
                             <p class="center-align">{{ recipe.description | truncate(75) }} <a href="{{ url_for('view_recipe', recipe_id=recipe.recepieid) }}" class="orange-text see-more-link" data-description="{{ recipe.description }}">See more</a></p>
