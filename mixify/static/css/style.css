@@ -116,8 +116,8 @@ html, body {
   padding: 8px; /* Adding padding to card content */
 }
 
-.row .col.s12{
-  margin-bottom: 5%;
+.row{
+  padding-bottom: 15%;
 }
 
 .row {
