@@ -513,6 +513,32 @@ Below is an overview of my testing and tests were carried out on the following d
 
 Expectation: Respond to device in which it is displayed on. Only show on index page. Result: Passed all tests.
 
+### Navbar
+
+Expectation: Respond to device in which it is displayed on. Also navigation links to change depending if a user is logged in or not. Result: Passed all tests.
+
+### Recipe Cards
+
+Expectation: Show the recipe name, recipe description up to 70 characters and also show the user buttons depending on the page which it is being displayed on. The view button to show on the all recipes and my favourites page and on the my recipes page the view button, edit and delete buttons to also be displayed. Result: Passed all tests.
+
+### User Forms
+
+Expectation: Forms that the users are required to fill in with a submit button at the bottom to complete. Forms to be present on the Login Page, Sign up Page, Add Recipe page and edit recipe page. Further testing to take place on individual pages. Result: Passed all initial testing.
+
+## Page Testing
+
+### Homepage (index.html)
+
+Expectation: Responsive to the device in which it is being displayed on, contain the navbar at the top and the footer at the bottom. Have a get started button which works in 2 seperate ways, firstly if the user is not signed in and presses on the get started button they will be taken to the Sign Up page. If the user is logged in a pressed the Get Started button they will be taken to the My Recipes page. Result: Passed all tests.
+
+### Sign Up page (signup.html)
+
+Expectation: Responsive to the device in which it is being displayed on, contain the navbar at the top and the footer at the bottom. Display a form to the user which allows them to create an account by inputting the following. Username, First name, Last Name, Date of Birth and a Password, all fields are required to be able to sign up. Also users date of birth must mean they are either 18 or equal to 18 years old. Result: Passed all tests.
+
+### Login Page (login.html)
+
+Expectation: Responsive to the device in which it is being displayed on, contain the navbar at the top and the footer at the bottom. Display a form to the user which allows them to log in to their account by inputting their username and password and pressing submit. Result: Passed all tests.
+
 ## Testing User Stories from User Experience (UX) Section
 
 ### First Time User Goals
