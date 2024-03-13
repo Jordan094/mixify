@@ -509,6 +509,10 @@ Below is an overview of my testing and tests were carried out on the following d
 
 ## Site Wide Testing
 
+### Admin Account
+
+I have added a number of checks in my site to allow a user called admin to delete recipes submitted to the site. This is incase a user submits content which is not appropriate to the site. Result: Passed all tests.
+
 ### Background
 
 Expectation: Respond to device in which it is displayed on. Only show on index page. Result: Passed all tests.
@@ -538,6 +542,31 @@ Expectation: Responsive to the device in which it is being displayed on, contain
 ### Login Page (login.html)
 
 Expectation: Responsive to the device in which it is being displayed on, contain the navbar at the top and the footer at the bottom. Display a form to the user which allows them to log in to their account by inputting their username and password and pressing submit. Result: Passed all tests.
+
+### My Recipes Page (my_recipes.html)
+
+Expectation: Responsive to the device in which it is being displayed on, contain the navbar at the top and the footer at the bottom. Display all of the recipes which have been submitted by the user who is logged in, in a preview card format, with 3 buttons on each card, a button to view the full recipe, a button to edit and a button to delete. Users can not delete recipes they have not submitted. Result: Passed all tests.
+
+### All Recipes Page (recipes.html)
+
+Expectation: Responsive to the device in which it is being displayed on, contain the navbar at the top and the footer at the bottom. Display all of the recipes which have been submitted by all users, in a preview card format, with 1 buttons on each card, a button to view the full recipe. Result: Passed all tests.
+
+### Favourite Recipes Page (favourites.html)
+
+Expectation: Responsive to the device in which it is being displayed on, contain the navbar at the top and the footer at the bottom. Display all of the recipes which have been favourites by the user who is logged in, in a preview card format, with 1 buttons on each card, a button to view the full recipe. Result: Passed all tests.
+
+### Add Recipe Page (add_recipe.html)
+
+Expectation: Responsive to the device in which it is being displayed on, contain the navbar at the top and the footer at the bottom. Contain a form for the user to fill in to submit a recipe requesting the following, Recipe name, Recipe description, Recipe ingredients and Recipe instructions. Recipe description to have a minimum character limit of 70 characters. Submit button at the bottom which add the submitted recipe to the database. Result: Passed all tests.
+
+### Edit Recipe Page (edit_recipe.html)
+
+Expectation: Responsive to the device in which it is being displayed on, contain the navbar at the top and the footer at the bottom. When the edit button is pressed it will pull the following information from the recipe database to a form pre filled out for the user to edit what they need from, Recipe name, Recipe description, Recipe ingredients and Recipe instructions. Recipe description to have a minimum character limit of 70 characters. Submit button at the bottom which will update the submitted recipe on the database. Users are only able to submit recipes that they have deleted. Result: Passed all tests.
+
+### View Recipe Page (view_recipe.html)
+
+Expectation: Responsive to the device in which it is being displayed on, contain the navbar at the top and the footer at the bottom. When a recipe is viewed it should load up that full recipe and display it on a page to the user showing the following: Recipe name, Recipe description, Recipe ingredients and Recipe instructions. Also at the bottom the name of the user who submitted the recipe should ben shown. Alongside 4 buttons, Favourite, Unfavourite, Edit Recipe and Delete Recipe. Users who add a recipe to their favourites will be taken to thier My Favourites page, if they have already got the recipe in their favourites they will be told you already do. Users will not be able to edit or delete recipes which they have not submitted. Result: Passed all tests.
+
 
 ## Testing User Stories from User Experience (UX) Section
 
