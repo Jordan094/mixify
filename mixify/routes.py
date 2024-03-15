@@ -9,9 +9,6 @@ def home():
     return render_template("index.html")
 
 
-
-
-
 # Route for displaying all recipes
 @app.route("/recipes")
 def recipes():
@@ -101,7 +98,7 @@ def delete_recipe(recipe_id):
     return redirect(url_for("my_recipes"))
 
 
-
+# Route for editing a recipe
 @app.route("/edit_recipe/<int:recipe_id>", methods=["GET", "POST"])
 def edit_recipe(recipe_id):
     # Check if the user is logged in
@@ -231,7 +228,7 @@ def my_favourites():
     username = session.get("user")
 
     if not username:
-        # If the user is not logged in, you might want to redirect them to the login page
+        # If the user is not logged in, redirect them to the login page
         return redirect(url_for("login"))
 
     # Fetch the user's favorite recipes from the database
